@@ -1,35 +1,21 @@
 import { Component } from '@angular/core';
-
+import {CardModule} from "primeng/card";
+import {CarouselModule} from "primeng/carousel";
+import {PrimeTemplate} from "primeng/api";
 
 @Component({
   selector: 'app-home',
+  standalone: true,
+    imports: [
+        CardModule,
+        CarouselModule,
+        PrimeTemplate
+    ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  items = [
-    {
-      label: 'About Us',
-      icon: 'pi pi-info-circle'
-    },
-    {
-      label: 'Products',
-      icon: 'pi pi-shopping-bag',
-    },
-    {
-      label: 'Global Partners',
-      icon: 'pi pi-star',
-    },
-    {
-      label: 'Gallery',
-      icon: 'pi pi-images',
-    },
 
-    {
-      label: 'Contact',
-      icon: 'pi pi-envelope'
-    }
-  ]
   responsiveOptions = [
     {
       breakpoint: '1199px',
@@ -51,6 +37,18 @@ export class HomeComponent {
   // @ts-ignore
   products: any[] = [
     {
+      name: 'Welcome to M.M Animal Health',
+      image: '/images/product-images/img.png',
+      inventoryStatus: 'INSTOCK'
+    }, {
+      name: 'Featured Product',
+      image: '/images/product-images/img_1.png',
+      inventoryStatus: 'INSTOCK'
+    }, {
+      name: 'Global Partners',
+      image: '/images/product-images/img_2.png',
+      inventoryStatus: 'INSTOCK'
+    },{
       name: 'Welcome to M.M Animal Health',
       image: '/images/product-images/img.png',
       inventoryStatus: 'INSTOCK'

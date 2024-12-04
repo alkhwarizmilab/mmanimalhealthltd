@@ -1,0 +1,82 @@
+<div class="md:col-10 lg:col-8 m-auto">
+  <p-carousel
+    [value]="products"
+    [numVisible]="3"
+    [numScroll]="1"
+    [circular]="true"
+    [autoplayInterval]="3000"
+    [responsiveOptions]="responsiveOptions">
+    <ng-template let-product pTemplate="item">
+      <div class=" border-none m-2 p-3">
+        <div class="mb-3">
+          <div class="relative mx-auto w-full">
+            <img
+              src="{{product.image}}"
+              [alt]="product.name" height="300" width="500"
+              class="w-full border-round"/>
+            <div class="absolute  p-2 w-full font-bold  text-black-alpha-60"
+                 style="height: auto; width: 100%; background: linear-gradient(to bottom, white, transparent);"
+                 [ngStyle]="{ 'left.px': 0, 'top.px': 0 }">
+              <div class="p-2">
+                {{ product.name }}
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </ng-template>
+  </p-carousel>
+
+  <div class="flex flex-column gap-5">
+    <p-card styleClass="" header="Company Summery">
+      <div class="flex sm:flex-column md:flex-row lg:flex-row justify-content-center  ">
+        <div class="flex-1">
+          <p class="">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's
+            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+            make
+            a type specimen book. It has survived not only five centuries, but also the leap into electronic
+            typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
+            containing
+            Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
+            versions
+            of Lorem Ipsum.
+          </p>
+
+
+        </div>
+        <div class="flex-1">
+          <div class="p-3 sm:w-12 m-auto">
+            <p-card header="Message from CEO" subheader="Card Subheader">
+              <ng-template pTemplate="header">
+                <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png"/>
+              </ng-template>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae
+                numquam
+                deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse,
+                cupiditate
+                neque
+                quas!
+              </p>
+
+            </p-card>
+          </div>
+
+        </div>
+      </div>
+
+    </p-card>
+
+    <p-card header="Products">
+
+    </p-card>
+
+  </div>
+
+</div>

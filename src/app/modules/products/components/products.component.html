@@ -1,0 +1,17 @@
+<div class="md:col-10 lg:col-8 mx-auto">
+  <div class="flex flex-wrap justify-content-center">
+    <div class="flex" *ngFor="let product of products; index as i; ">
+      <div [routerLink]="'link'" class="flex p-card m-3 p-3 cursor-pointer transition-colors transition-duration-500 hover:bg-black-alpha-10 hover:text-gray-900">
+        <div class="flex flex-column p-1">
+          <div class="flex-grow-1">
+            <img src="{{product.image}}" width="300">
+          </div>
+          <div class="text-lg flex-grow-0">{{ product.name }}</div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
