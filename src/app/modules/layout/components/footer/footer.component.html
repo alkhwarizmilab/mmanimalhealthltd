@@ -1,1 +1,45 @@
-<div class="h-20rem surface-300"></div>
+
+<p-toolbar styleClass="p-1">
+
+  <div class="col-8 flex lg:flex-row md:flex-row sm:flex-column justify-content-between align-content-center mx-auto">
+    <div class="sm:w-12 md:w-3 lg:w-3">
+      <div routerLink="/" class="flex justify-content-start align-items-center cursor-pointer m-1">
+        <img src="images/logo.png" height="80" alt="mmanimalhealthltd">
+      </div>
+      <div>
+        <h3 class="text-black-alpha-70">M.M Animal Health Ltd.</h3>
+        <p class="text-black-alpha-60 text-sm"> M.M Animal Health Ltd. is a sister concern of an award winning company "Techno Venture ltd",that aims to provide quality products to the farmers and Committed to be always with the farmers.
+        </p>
+      </div>
+
+
+    </div>
+
+
+      <div class="p-2 flex flex-column gap-2">
+        <h3 style="display:block">
+          Userful Links
+        </h3>
+        <span [ngClass]="linkClass" routerLink="about-us">About Us</span>
+        <span [ngClass]="linkClass" routerLink="products">Products</span>
+        <span [ngClass]="linkClass" routerLink="about-us">Global Partners</span>
+        <span [ngClass]="linkClass" routerLink="about-us">Gallery</span>
+        <span [ngClass]="linkClass" routerLink="about-us">Contact</span>
+
+      </div>
+
+      <div class="p-2 flex flex-column gap-2">
+        <h3 style="display:block">
+          Contact Us
+        </h3>
+        <span [ngClass]="linkClass" routerLink="about-us"><i class="pi pi-map-marker"> </i> 54, Gulshan, Dhaka-1200</span>
+        <span [ngClass]="linkClass" routerLink="about-us"><i class="pi pi-phone"> </i> +880-1725-717136</span>
+        <span [ngClass]="linkClass" routerLink="about-us"><i class="pi pi-enveloper"> </i> {{'mmanimalhealthbd40@gmail.com'}}</span>
+
+
+
+
+    </div>
+  </div>
+
+</p-toolbar>
