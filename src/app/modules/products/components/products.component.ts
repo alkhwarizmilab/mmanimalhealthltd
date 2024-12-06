@@ -17,7 +17,62 @@ import {Product} from "../domain/product";
 export class ProductsComponent implements OnInit {
   firestore = inject(Firestore);
 
-  products: any[] = [ ];
+  products: any[] = [
+    /*{
+      id: 1,
+      name: 'Welcome to M.M Animal Health',
+      description: 'A comprehensive solution for animal health care.',
+      price: 49.99,
+      imageUrl: 'images/product-images/img.png',
+      category: 'Animal Health',
+      stock: 100,
+    },
+    {
+      id: 2,
+      name: 'Featured Product',
+      description: 'Our top-quality featured product.',
+      price: 89.99,
+      imageUrl: 'images/product-images/img_1.png',
+      category: 'Featured',
+      stock: 200,
+    },
+    {
+      id: 3,
+      name: 'Global Partners',
+      description: 'Trusted solutions from our global partners.',
+      price: 69.99,
+      imageUrl: 'images/product-images/img_2.png',
+      category: 'Global Solutions',
+      stock: 150,
+    },
+    {
+      id: 4,
+      name: 'Welcome to M.M Animal Health',
+      description: 'A reliable choice for animal care.',
+      price: 49.99,
+      imageUrl: 'images/product-images/img.png',
+      category: 'Animal Health',
+      stock: 100,
+    },
+    {
+      id: 5,
+      name: 'Featured Product',
+      description: 'Best-selling featured item.',
+      price: 89.99,
+      imageUrl: 'images/product-images/img_1.png',
+      category: 'Featured',
+      stock: 200,
+    },
+    {
+      id: 6,
+      name: 'Global Partners',
+      description: 'Premium products from around the globe.',
+      price: 69.99,
+      imageUrl: 'images/product-images/img_2.png',
+      category: 'Global Solutions',
+      stock: 150,
+    },*/
+  ];
 
   constructor(private productService: ProductService) {
   }
@@ -30,12 +85,12 @@ export class ProductsComponent implements OnInit {
     });
   }
 
-  // addproducts() {
-  //   this.products.forEach(value => {
-  //     this.productService.addProduct(value).then(r => {
-  //
-  //     });
-  //   })
-  // }
+  addproducts() {
+    this.products.forEach(value => {
+      this.productService.addProduct(value).then(r => {
+
+      });
+    })
+  }
 
 }

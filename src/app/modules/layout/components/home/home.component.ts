@@ -38,27 +38,27 @@ export class HomeComponent {
   products: any[] = [
     {
       name: 'Welcome to M.M Animal Health',
-      image: '/images/product-images/img.png',
+      image: 'images/product-images/img.png',
       inventoryStatus: 'INSTOCK'
     }, {
       name: 'Featured Product',
-      image: '/images/product-images/img_1.png',
+      image: 'images/product-images/img_1.png',
       inventoryStatus: 'INSTOCK'
     }, {
       name: 'Global Partners',
-      image: '/images/product-images/img_2.png',
+      image: 'images/product-images/img_2.png',
       inventoryStatus: 'INSTOCK'
     },{
       name: 'Welcome to M.M Animal Health',
-      image: '/images/product-images/img.png',
+      image: 'images/product-images/img.png',
       inventoryStatus: 'INSTOCK'
     }, {
       name: 'Featured Product',
-      image: '/images/product-images/img_1.png',
+      image: 'images/product-images/img_1.png',
       inventoryStatus: 'INSTOCK'
     }, {
       name: 'Global Partners',
-      image: '/images/product-images/img_2.png',
+      image: 'images/product-images/img_2.png',
       inventoryStatus: 'INSTOCK'
     },
 
