@@ -1,7 +1,12 @@
-import {Component} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {CardModule} from "primeng/card";
 import {PrimeTemplate} from "primeng/api";
 import {animate, state, style, transition, trigger} from "@angular/animations";
+import {AngularFirestore} from "@angular/fire/compat/firestore";
+import {collection, Firestore} from "@angular/fire/firestore";
+import {Observable} from "rxjs";
+import {ProductService} from "../service/product.service";
+import {Product} from "../domain/product";
 
 @Component({
   selector: 'app-products',
@@ -9,37 +14,28 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss',
 })
-export class ProductsComponent {
-  // @ts-ignore
-  products: any[] = [
-    {
-      name: 'Welcome to M.M Animal Health',
-      image: '/images/product-images/img.png',
-      inventoryStatus: 'INSTOCK',
-      link: '12'
-    }, {
-      name: 'Featured Product',
-      image: '/images/product-images/img_1.png',
-      inventoryStatus: 'INSTOCK',
-      link: '12'
-    }, {
-      name: 'Global Partners',
-      image: '/images/product-images/img_2.png',
-      inventoryStatus: 'INSTOCK'
-    },
+export class ProductsComponent implements OnInit {
+  firestore = inject(Firestore);
 
+  products: any[] = [ ];
+
+  constructor(private productService: ProductService) {
+  }
+
+
+  ngOnInit(): void {
+    this.productService.fetchProducts().subscribe(data =>
     {
-      name: 'Welcome to M.M Animal Health',
-      image: '/images/product-images/img.png',
-      inventoryStatus: 'INSTOCK'
-    }, {
-      name: 'Featured Product',
-      image: '/images/product-images/img_1.png',
-      inventoryStatus: 'INSTOCK'
-    }, {
-      name: 'Global Partners',
-      image: '/images/product-images/img_2.png',
-      inventoryStatus: 'INSTOCK'
-    },
-  ];
+      this.products = data
+    });
+  }
+
+  // addproducts() {
+  //   this.products.forEach(value => {
+  //     this.productService.addProduct(value).then(r => {
+  //
+  //     });
+  //   })
+  // }
+
 }
