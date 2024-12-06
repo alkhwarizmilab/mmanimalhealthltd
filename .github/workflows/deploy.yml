@@ -27,7 +27,7 @@ jobs:
         run: npm ci
 
       - name: Build Angular
-        run: npm run build -c=production --base-href=/mmanimalhealthltd/
+        run: npm run build -c=production && cp dist/mmanimalhealthltd/browser/index.html dist/mmanimalhealthltd/browser/404.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
