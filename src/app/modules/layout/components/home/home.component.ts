@@ -6,6 +6,7 @@ import {NgOptimizedImage} from "@angular/common";
 import {RouterLink} from "@angular/router";
 import {ProductService} from "../../../products/service/product.service";
 import {Button} from "primeng/button";
+import {SkeletonModule} from "primeng/skeleton";
 
 @Component({
   selector: 'app-home',
@@ -16,14 +17,16 @@ import {Button} from "primeng/button";
     PrimeTemplate,
     NgOptimizedImage,
     RouterLink,
-    Button
+    Button,
+    SkeletonModule
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent implements OnInit{
-constructor(private productService: ProductService) {
-}
+export class HomeComponent implements OnInit {
+  constructor(private productService: ProductService) {
+  }
+
   responsiveOptions = [
     {
       breakpoint: '1199px',
@@ -42,7 +45,64 @@ constructor(private productService: ProductService) {
     }
   ];
 
-  // @ts-ignore
+
+  carousel: any[] = [
+    {
+      id: 1,
+      name: 'Welcome to M.M Animal Health',
+      description: 'A comprehensive solution for animal health care.',
+      price: 49.99,
+      imageUrl: 'images/product-images/img.png',
+      category: 'Animal Health',
+      stock: 100,
+    },
+    {
+      id: 2,
+      name: 'Featured Product',
+      description: 'Our top-quality featured product.',
+      price: 89.99,
+      imageUrl: 'images/product-images/img_1.png',
+      category: 'Featured',
+      stock: 200,
+    },
+    {
+      id: 3,
+      name: 'Global Partners',
+      description: 'Trusted solutions from our global partners.',
+      price: 69.99,
+      imageUrl: 'images/product-images/img_2.png',
+      category: 'Global Solutions',
+      stock: 150,
+    },
+    {
+      id: 4,
+      name: 'Welcome to M.M Animal Health',
+      description: 'A reliable choice for animal care.',
+      price: 49.99,
+      imageUrl: 'images/product-images/img.png',
+      category: 'Animal Health',
+      stock: 100,
+    },
+    {
+      id: 5,
+      name: 'Featured Product',
+      description: 'Best-selling featured item.',
+      price: 89.99,
+      imageUrl: 'images/product-images/img_1.png',
+      category: 'Featured',
+      stock: 200,
+    },
+    {
+      id: 6,
+      name: 'Global Partners',
+      description: 'Premium products from around the globe.',
+      price: 69.99,
+      imageUrl: 'images/product-images/img_2.png',
+      category: 'Global Solutions',
+      stock: 150,
+    }
+
+  ];
   featuredProducts: any[] = [
     // {
     //   name: 'Welcome to M.M Animal Health',
@@ -73,12 +133,10 @@ constructor(private productService: ProductService) {
   ];
 
   ngOnInit(): void {
-    this.productService.fetchFeaturedProducts().subscribe(data =>
-    {
+    this.productService.fetchFeaturedProducts().subscribe(data => {
       this.featuredProducts = data
     });
   }
-
 
 
 }

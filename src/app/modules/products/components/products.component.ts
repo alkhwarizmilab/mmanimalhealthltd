@@ -75,6 +75,7 @@ export class ProductsComponent implements OnInit {
   ];
 
   constructor(private productService: ProductService) {
+    window.scrollTo(0, 0);
   }
 
 

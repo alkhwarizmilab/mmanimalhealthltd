@@ -6,6 +6,7 @@ import {ProductsComponent} from "./components/products.component";
 import {ProductDetailsComponent} from "./components/product-details/product-details.component";
 import {FormsModule} from "@angular/forms";
 import {Button} from "primeng/button";
+import {SkeletonModule} from "primeng/skeleton";
 
 @NgModule({
   declarations: [ProductsComponent,ProductDetailsComponent],
@@ -16,6 +17,7 @@ import {Button} from "primeng/button";
     RouterModule.forChild(productsRoutes),
     NgOptimizedImage,
     Button,
+    SkeletonModule,
 
   ]
 })
