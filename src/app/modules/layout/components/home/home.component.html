@@ -53,7 +53,7 @@
   </p-carousel>
   <div class="flex flex-column gap-5">
     <p-card styleClass="" header="Company Summery">
-      <div class="flex sm:flex-column md:flex-row lg:flex-row justify-content-center  ">
+      <div class="flex flex-column sm:flex-column md:flex-row lg:flex-row justify-content-center  ">
         <div class="flex-1">
           <p class="">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
@@ -72,7 +72,7 @@
 
         </div>
         <div class="flex-1">
-          <div class="p-3 sm:w-12 m-auto">
+          <div class="p-3 w-12 sm:w-12 m-auto">
             <p-card header="Message from CEO" subheader="Card Subheader">
               <ng-template pTemplate="header">
                 <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png"/>
@@ -108,12 +108,12 @@
       <div class="flex flex-wrap justify-content-center">
         <div class="flex" *ngFor="let product of featuredProducts; index as i; ">
           <div [routerLink]="'products/'+product.id"
-               class="flex p-card m-3 p-3 cursor-pointer transition-colors transition-duration-500 hover:bg-black-alpha-10 hover:text-gray-900">
-            <div class="flex flex-column p-1">
-              <div class="flex-grow-1">
-                <img ngSrc="{{product.imageUrl || 'a'}}" width="300" height="400" alt="{{product.name}}">
+               class="flex p-card m-2 p-3 cursor-pointer transition-colors transition-duration-500 hover:bg-black-alpha-10 hover:text-gray-900">
+            <div class="flex flex-column p-1 w-10rem h-15rem sm:w-10rem sm:h-15rem md:h-25rem md:w-18rem" >
+              <div class="flex flex-grow-1">
+                <img src="{{product?.imageUrl}}" style="width:100%;height:100%; object-fit: contain" alt="{{product.name}}">
               </div>
-              <div class="text-lg flex-grow-0">{{ product.name }}</div>
+              <div class="flex-grow-0">{{ product.name }}</div>
             </div>
 
           </div>
