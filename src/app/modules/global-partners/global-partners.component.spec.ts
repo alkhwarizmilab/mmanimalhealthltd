@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TopBarComponent } from './top-bar.component';
+import { GlobalPartnersComponent } from './global-partners.component';
 
-describe('TopBarComponent', () => {
-  let component: TopBarComponent;
-  let fixture: ComponentFixture<TopBarComponent>;
+describe('GlobalPartnersComponent', () => {
+  let component: GlobalPartnersComponent;
+  let fixture: ComponentFixture<GlobalPartnersComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TopBarComponent]
+      imports: [GlobalPartnersComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TopBarComponent);
+    fixture = TestBed.createComponent(GlobalPartnersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

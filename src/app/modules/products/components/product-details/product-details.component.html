@@ -1,1 +1,6 @@
-<p>product-details works!</p>
+<div class="flex flex-column p-1">
+  <div class="flex-grow-1">
+    <img *ngIf="product?.imageUrl" ngSrc="{{product?.imageUrl}}" width="300" height="400" alt="{{product?.name}}">
+  </div>
+  <div class="text-lg flex-grow-0">{{ product?.name }}</div>
+</div>

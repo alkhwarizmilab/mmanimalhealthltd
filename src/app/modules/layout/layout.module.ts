@@ -11,7 +11,7 @@ import {MenubarModule} from "primeng/menubar";
 import {CarouselModule} from "primeng/carousel";
 import {TagModule} from "primeng/tag";
 import {CardModule} from "primeng/card";
-import {TopBarComponent} from "./components/top-bar/top-bar.component";
+import {HeaderComponent} from "./components/header/header.component";
 import {FooterComponent} from "./components/footer/footer.component";
 
 
@@ -31,7 +31,7 @@ import {FooterComponent} from "./components/footer/footer.component";
     CarouselModule,
     TagModule,
     CardModule,
-    TopBarComponent,
+    HeaderComponent,
     FooterComponent
   ]
 })

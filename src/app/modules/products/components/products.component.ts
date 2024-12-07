@@ -83,6 +83,11 @@ export class ProductsComponent implements OnInit {
     this.productService.fetchProducts().subscribe(data =>
     {
       this.products = data
+      let productMap = new Map();
+      this.products.map(products => {
+        productMap.set(products.id, products);
+      })
+      this.productService.productMap = productMap;
     });
   }
 

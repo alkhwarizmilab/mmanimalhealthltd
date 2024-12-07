@@ -10,16 +10,19 @@ import {Router} from "@angular/router";
     MenubarModule,
     ToolbarModule
   ],
-  templateUrl: './top-bar.component.html',
-  styleUrl: './top-bar.component.scss'
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.scss'
 })
-export class TopBarComponent {
+export class HeaderComponent {
 constructor(private router:Router) {
 }
   items = [
     {
       label: 'About Us',
-      icon: 'pi pi-info-circle'
+      icon: 'pi pi-info-circle',
+      command: () => {
+        this.router.navigate(['/about-us']);
+      }
     },
     {
       label: 'Products',
@@ -34,15 +37,24 @@ constructor(private router:Router) {
     {
       label: 'Global Partners',
       icon: 'pi pi-star',
+      command: () => {
+        this.router.navigate(['/global-partners']);
+      }
     },
     {
       label: 'Gallery',
       icon: 'pi pi-images',
+      command: () => {
+        this.router.navigate(['/gallery']);
+      }
     },
 
     {
       label: 'Contact',
-      icon: 'pi pi-envelope'
+      icon: 'pi pi-envelope',
+      command: () => {
+        this.router.navigate(['/contact-us']);
+      }
     }
   ]
   responsiveOptions = [

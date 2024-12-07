@@ -1,19 +1,33 @@
 import {inject, Injectable} from '@angular/core';
-import {from, Observable} from "rxjs";
-import {addDoc, collection, collectionData, Firestore, getDoc, getDocs, query, where} from "@angular/fire/firestore";
+import {BehaviorSubject, from, Observable} from "rxjs";
+import {
+  addDoc,
+  collection,
+  collectionData,
+  doc,
+  Firestore,
+  getDoc,
+  getDocs,
+  query,
+  where
+} from "@angular/fire/firestore";
 import {Product} from "../domain/product";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
+  productMap = new Map();
   firestore: Firestore = inject(Firestore);
-  constructor() { }
 
-  fetchProducts(): Observable<any>{
-    const itemCollection = collection(this.firestore, 'products');
-    return collectionData<Product>(itemCollection, { idField: 'id' });
+  constructor() {
   }
+
+  fetchProducts(): Observable<any> {
+    const itemCollection = collection(this.firestore, 'products');
+    return collectionData<Product>(itemCollection, {idField: 'id'});
+  }
+
   fetchFeaturedProducts(): Observable<Product[]> {
     const productCollection = collection(this.firestore, 'products');
     const q = query(productCollection, where('category', '==', 'Featured'));
@@ -31,6 +45,20 @@ export class ProductService {
 
   addProduct(value: Product) {
     const productCollection = collection(this.firestore, 'products');
-    return  addDoc(productCollection,value);
+    return addDoc(productCollection, value);
+  }
+
+  fetchProductById(docId: string): Observable<any> {
+    // Reference the specific document
+    const productDocRef = doc(this.firestore, `products/${docId}`);
+
+    // Fetch the document using getDoc and convert it to an Observable
+    return from(getDoc(productDocRef).then((docSnap) => {
+      if (docSnap.exists()) {
+        return docSnap.data(); // Return document data
+      } else {
+        throw new Error('Document does not exist!');
+      }
+    }));
   }
 }
