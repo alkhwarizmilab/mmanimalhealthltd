@@ -1,22 +1,29 @@
-<p-toolbar>
-  <div class="p-toolbar-group-start">
-  </div>
-  <div class="p-toolbar-group-center">
-    <div class="flex flex-row sm:flex-row md:flex-column lg:flex-column justify-content-center">
-      <div routerLink="/" class="flex justify-content-center align-items-center cursor-pointer">
-        <img src="images/mmanimalhealth-header-image.png" style="height:75px" alt="mmanimalhealthltd">
-<!--        <span class="m-2 text-4xl font-bold">M.M Animal Health</span>-->
-      </div>
+<p-toolbar styleClass="flex justify-content-center">
+<div class="flex flex-column align-items-center">
+  <div class="flex flex-row justify-content-center">
+    <div class="flex flex-grow-0 block sm:block md:hidden lg:hidden align-items-center align-content-center">
+      <p-button icon="pi pi-bars" [text]="true" (click)="menu.toggle($event)" styleClass=""></p-button>
+      <p-menu #menu [popup]="true" [model]="items"></p-menu>
+    </div>
+    <div class="flex flex-grow-1 md:flex-grow-0 lg:flex-grow-0 w-12 sm:w-12 md:w-5 lg:w-5">
+      <div routerLink="/" class="flex justify-content-center align-items-center max-w-fit cursor-pointer">
+        <img src="images/mmanimalhealth-header-image.png" style="width:100%;height:auto;object-fit:contain"
+             alt="mmanimalhealthltd">
 
-      <div class="mt-3">
-        <p-menubar styleClass="border-none" [model]="items" apendTo="body">
-        </p-menubar>
       </div>
     </div>
 
   </div>
+  <div class="flex justify-content-center">
+    <div class="mt-2 hidden sm:hidden md:flex lg:flex">
+      <p-menubar styleClass="border-none" [model]="items">
+      </p-menubar>
+    </div>
 
 
-  <div class="p-toolbar-group-end">
   </div>
+</div>
+
+
+
 </p-toolbar>

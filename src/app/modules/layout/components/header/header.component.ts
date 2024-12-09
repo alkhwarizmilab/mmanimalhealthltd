@@ -2,13 +2,19 @@ import {Component, Input} from '@angular/core';
 import {MenubarModule} from "primeng/menubar";
 import {ToolbarModule} from "primeng/toolbar";
 import {Router} from "@angular/router";
+import {NgOptimizedImage} from "@angular/common";
+import {MenuModule} from "primeng/menu";
+import {Button} from "primeng/button";
 
 @Component({
   selector: 'app-top-bar',
   standalone: true,
   imports: [
     MenubarModule,
-    ToolbarModule
+    ToolbarModule,
+    NgOptimizedImage,
+    MenuModule,
+    Button
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
