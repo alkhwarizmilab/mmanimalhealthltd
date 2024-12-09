@@ -56,11 +56,26 @@
         <p>
 
 
-          Our vision is to become a trusted company to ensure better animal health and better human health for everyone, everywhere of the globe.
+          Our vision is to become a trusted company to ensure better animal health and better human health for everyone,
+          everywhere of the globe.
           <br><br>
         </p>
 
       </div>
+
+
+    </p-card>
+    <p-card styleClass="" header="Our Believes">
+
+      <div class="flex flex-row justify-content-center">
+        <div
+          *ngFor="let b of believes; index as i;"
+          [ngStyle]="{'background-color': getRandomLightColor()}"
+          class="flex p-2 m-2 shadow-1 border-round">
+          {{ b }}
+        </div>
+      </div>
+
 
 
     </p-card>
