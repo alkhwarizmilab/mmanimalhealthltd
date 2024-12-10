@@ -7,6 +7,8 @@ import {RouterLink} from "@angular/router";
 import {ProductService} from "../../../products/service/product.service";
 import {Button} from "primeng/button";
 import {SkeletonModule} from "primeng/skeleton";
+import {AvatarModule} from "primeng/avatar";
+import {ImageModule} from "primeng/image";
 
 @Component({
   selector: 'app-home',
@@ -18,7 +20,9 @@ import {SkeletonModule} from "primeng/skeleton";
     NgOptimizedImage,
     RouterLink,
     Button,
-    SkeletonModule
+    SkeletonModule,
+    AvatarModule,
+    ImageModule
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

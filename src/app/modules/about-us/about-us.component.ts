@@ -28,9 +28,9 @@ export class AboutUsComponent {
     "People",
   ];
   getRandomLightColor(): string {
-    const r = Math.floor(Math.random() * 156 + 200); // Red: 100-255
-    const g = Math.floor(Math.random() * 156 + 200); // Green: 100-255
-    const b = Math.floor(Math.random() * 156 + 200); // Blue: 100-255
+    const r = Math.floor(Math.random() * 156 + 100); // Red: 100-255
+    const g = Math.floor(Math.random() * 156 + 100); // Green: 100-255
+    const b = Math.floor(Math.random() * 156 + 100); // Blue: 100-255
     return `rgb(${r}, ${g}, ${b})`;
   }
 
