@@ -12,6 +12,7 @@ export class ProductDetailsComponent implements OnInit {
   product: Product | undefined;
 
   constructor(private router: Router, private route: ActivatedRoute, private productService: ProductService) {
+    window.scrollTo(0, 0);
 
   }
 
