@@ -44,6 +44,6 @@ jobs:
 
       - name: Deploy via SCP
         run: |
-          scp -r dist/your-angular-app-name/* ${{ secrets.EC2_HOST }}:/var/www/mmah/
+          scp -r dist/mmanimalhealthltd/browser/* ${{ secrets.EC2_HOST }}:/var/www/mmah/
 
 
