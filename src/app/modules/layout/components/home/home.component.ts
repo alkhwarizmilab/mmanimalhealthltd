@@ -27,7 +27,8 @@ import {ImageModule} from "primeng/image";
     NgIf
   ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
+  host: { ngSkipHydration: 'true' },
 })
 export class HomeComponent implements OnInit {
   constructor(private productService: ProductService) {
