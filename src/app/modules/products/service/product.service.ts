@@ -1,17 +1,20 @@
 import {inject, Injectable} from '@angular/core';
-import {BehaviorSubject, from, Observable} from "rxjs";
+import {from, Observable} from "rxjs";
 import {
   addDoc,
   collection,
   collectionData,
+  deleteDoc,
   doc,
   Firestore,
   getDoc,
   getDocs,
   query,
+  updateDoc,
   where
 } from "@angular/fire/firestore";
 import {Product} from "../domain/product";
+import {ref, Storage, uploadBytesResumable} from "@angular/fire/storage";
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +22,7 @@ import {Product} from "../domain/product";
 export class ProductService {
   productMap = new Map();
   firestore: Firestore = inject(Firestore);
+  storage: Storage = inject(Storage);
 
   constructor() {
   }
@@ -61,4 +65,19 @@ export class ProductService {
       }
     }));
   }
+
+  updateProduct(value: Product) {
+    const documentReference = doc(this.firestore, `products/${value.id}`);
+    return updateDoc(documentReference, {...value});
+  }
+  deleteProduct(value: Product) {
+    const documentReference = doc(this.firestore, `products/${value.id}`);
+    return deleteDoc(documentReference);
+  }
+
+  uploadFile(fileName: any, file: any) {
+    const storageRef = ref(this.storage, file.name);
+    return uploadBytesResumable(storageRef, file);
+  }
+
 }

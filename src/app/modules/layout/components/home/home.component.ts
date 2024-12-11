@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {CardModule} from "primeng/card";
 import {CarouselModule} from "primeng/carousel";
 import {PrimeTemplate} from "primeng/api";
-import {NgOptimizedImage} from "@angular/common";
+import {NgForOf, NgIf, NgOptimizedImage} from "@angular/common";
 import {RouterLink} from "@angular/router";
 import {ProductService} from "../../../products/service/product.service";
 import {Button} from "primeng/button";
@@ -22,7 +22,9 @@ import {ImageModule} from "primeng/image";
     Button,
     SkeletonModule,
     AvatarModule,
-    ImageModule
+    ImageModule,
+    NgForOf,
+    NgIf
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

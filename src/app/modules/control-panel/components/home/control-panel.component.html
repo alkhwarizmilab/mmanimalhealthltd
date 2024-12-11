@@ -1,0 +1,13 @@
+
+<app-top-bar></app-top-bar>
+<div class="p-5 flex flex-column sm:flex-column md:flex-row lg:flex-row">
+  <div class="flex flex-grow-0 justify-center p-5">
+    <p-menu [model]="items"/>
+  </div>
+  <div class="p-5 flex-grow-1">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>
+
+<app-footer></app-footer>

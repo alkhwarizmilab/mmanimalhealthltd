@@ -7,9 +7,12 @@ import {initializeApp, provideFirebaseApp} from '@angular/fire/app';
 import {getAuth, provideAuth} from '@angular/fire/auth';
 import {getFirestore, provideFirestore} from '@angular/fire/firestore';
 import {getStorage, provideStorage} from '@angular/fire/storage';
+import {provideHttpClient} from "@angular/common/http";
+import { provideClientHydration } from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideHttpClient(),
     provideZoneChangeDetection({eventCoalescing: true}),
     provideRouter(routes, withViewTransitions()),
     provideAnimationsAsync(), provideFirebaseApp(() => initializeApp({
@@ -19,6 +22,6 @@ export const appConfig: ApplicationConfig = {
       "apiKey": "AIzaSyDtVCVoNpVmLe0qbW-O3a8OZeEZ2V8p1Ec",
       "authDomain": "mmanimalhealthltd.firebaseapp.com",
       "messagingSenderId": "728464196232"
-    })), provideAuth(() => getAuth()), provideFirestore(() => getFirestore()), provideStorage(() => getStorage()),
+    })), provideAuth(() => getAuth()), provideFirestore(() => getFirestore()), provideStorage(() => getStorage()), provideClientHydration(),
   ]
 };

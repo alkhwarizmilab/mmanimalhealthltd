@@ -1,0 +1,111 @@
+<p-confirmDialog></p-confirmDialog>
+<div class=" p-5 border-1 border-200 border-round">
+  <p-dataView #dv [value]="products">
+    <ng-template pTemplate="list" let-products>
+      <div class="grid grid-nogutter">
+        <div class="col-12" *ngFor="let item of products; let first = first" class="col-12">
+          <div class="flex flex-column sm:flex-row sm:align-items-center p-4 gap-3"
+               [ngClass]="{ 'border-top-1 surface-border': !first }">
+            <div class="md:w-10rem relative">
+              <img class="block xl:block mx-auto border-round w-full" [src]="item.imageUrl" [alt]="item.name"/>
+              <!--              <p-tag [value]="item.inventoryStatus" [severity]="getSeverity(item)" class="absolute" [style.left.px]="4" [style.top.px]="4" />-->
+            </div>
+            <div class="flex flex-column md:flex-row justify-content-between md:align-items-center flex-1 gap-4">
+              <div class="flex flex-row md:flex-column justify-content-between align-items-start gap-2">
+                <div>
+                  <span class="font-medium text-secondary text-sm">{{ item.category }}</span>
+                  <div class="text-lg font-medium text-900 mt-2">{{ item.name }}</div>
+                </div>
+                <div class="flex align-items-center gap-2 justify-content-center">
+                  <span class="text-900 font-medium text-sm">{{ item.description }}</span>
+                </div>
+              </div>
+              <div class="flex flex-column md:align-items-end gap-5">
+                <!--                <span class="text-xl font-semibold text-900">{{ '$' + item.price }}</span>-->
+                <div class="flex flex-row-reverse md:flex-row gap-2">
+                  <p-button severity="secondary" (onClick)="viewProduct(item)" icon="pi pi-eye" [outlined]="true"/>
+                  <p-button icon="pi pi-pencil" (onClick)="showEditDialog(item)" [outlined]="true"/>
+                  <p-button severity="danger" (onClick)="deleteProduct(item)" icon="pi pi-trash" [outlined]="true"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="!products.length" class="grid grid-nogutter">
+        <div class="col-12" *ngFor="let i of counterArray(6); let first = first" class="col-12">
+          <div class="flex flex-column xl:flex-row xl:align-items-start p-4 gap-4"
+               [ngClass]="{ 'border-top-1 surface-border': !first }">
+            <p-skeleton styleClass="w-9 sm:w-16rem xl:w-10rem h-6rem block xl:block mx-auto border-round"/>
+            <div
+              class="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4">
+              <div class="flex flex-column align-items-center sm:align-items-start gap-3">
+                <p-skeleton styleClass="w-8rem border-round h-2rem"/>
+                <p-skeleton styleClass="w-6rem border-round h-1rem"/>
+                <div class="flex align-items-center gap-3">
+                  <p-skeleton styleClass="w-6rem border-round h-1rem"/>
+                  <p-skeleton styleClass="w-3rem border-round h-1rem"/>
+                </div>
+              </div>
+              <div class="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
+                <p-skeleton styleClass="w-4rem border-round h-2rem"/>
+                <p-skeleton shape="circle" styleClass="w-3rem h-3rem"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+
+
+  </p-dataView>
+</div>
+<p-dialog *ngIf="showProductInfoDialog" header="{{productInfoHeader}}" [modal]="true"
+          [(visible)]="showProductInfoDialog" styleClass="w-12 sm:w-12 md:w-8 lg:w-8">
+  <span class="p-text-secondary block mb-5">Update your information.</span>
+  <div class="flex flex-column gap-2">
+    <div class="flex justify-content-center">
+      <div class="w-3 flex flex-column">
+        <img *ngIf="!previewURL" src="{{currentProduct.imageUrl}}" class="w-full">
+        <img *ngIf="previewURL" src="{{previewURL}}" class="w-full">
+        <div class="flex justify-content-center">
+          <input type="file" class="hidden" #fileInput (change)="fileChange($event)"/>
+          <p-button size="small" [outlined]="true" (onClick)="fileInput.click()" label="Change"></p-button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="field">
+      <label for="productName" class="">Product Name</label>
+      <input pInputText [(ngModel)]="currentProduct.name" id="productName"
+             class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+             autocomplete="off"/>
+    </div>
+    <div class="field">
+      <label for="category" class="">Category</label>
+      <input pInputText id="category" [(ngModel)]="currentProduct.category"
+             class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+             autocomplete="off"/>
+    </div>
+    <div class="field">
+      <label for="shortDes" class="">Short Description</label>
+      <input pInputText id="shortDes" [(ngModel)]="currentProduct.shortDescription"
+             class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+             autocomplete="off"/>
+    </div>
+    <div class="field">
+      <label for="description" class="">Description</label>
+      <textarea pInputText id="description" [(ngModel)]="currentProduct.description"
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                autocomplete="off"></textarea>
+    </div>
+
+  </div>
+
+  <div class="flex justify-content-end gap-2">
+    <p-button label="Cancel" severity="secondary" (onClick)="showProductInfoDialog = false"/>
+    <p-button label="Save" (onClick)="updateProduct()"/>
+  </div>
+</p-dialog>
