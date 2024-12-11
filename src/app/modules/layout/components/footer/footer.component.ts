@@ -24,5 +24,8 @@ import {NgClass} from "@angular/common";
 export class FooterComponent {
   linkClass = "text-700 hover:text-primary cursor-pointer transition-colors transition-duration-500 p-1";
 
-  protected readonly window = window;
+
+  openUrl(url: string) {
+    window.open(url)
+  }
 }
