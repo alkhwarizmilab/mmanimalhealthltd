@@ -38,12 +38,13 @@ jobs:
       - name: Configure SSH
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
+          echo "${{ secrets.EC2_HOST }}"
+      #     echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+      #     chmod 600 ~/.ssh/id_rsa
+      #     ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Deploy via SCP
-        run: |
-          scp -r public/images/* ${{ secrets.EC2_HOST }}:/var/www/mmah/
+      # - name: Deploy via SCP
+      #   run: |
+      #     scp -r public/images/* ${{ secrets.EC2_HOST }}:/var/www/mmah/
 
 
