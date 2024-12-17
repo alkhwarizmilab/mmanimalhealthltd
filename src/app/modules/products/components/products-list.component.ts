@@ -11,10 +11,10 @@ import {Product} from "../domain/product";
 @Component({
   selector: 'app-products',
 
-  templateUrl: './products.component.html',
-  styleUrl: './products.component.scss',
+  templateUrl: './products-list.component.html',
+  styleUrl: './products-list.component.scss',
 })
-export class ProductsComponent implements OnInit {
+export class ProductsListComponent implements OnInit {
   firestore = inject(Firestore);
 
   products: any[] = [

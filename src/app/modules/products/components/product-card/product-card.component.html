@@ -1,0 +1,31 @@
+<div
+  class="flex justify-content-center h-full w-full p-card border-round-md shadow-1 overflow-hidden cursor-pointer transition-all transition-duration-300 hover:shadow-4 hover:bg-gray-100">
+  <!-- Product Image -->
+  <div class="flex flex-column w-full h-full">
+    <div class="flex flex-grow-1 w-full h-full">
+      <img
+        [src]="product?.imageUrl"
+        [alt]="product?.name"
+        class="w-full h-full object-contain"
+      />
+    </div>
+    <div class="flex flex-grow-0 w-full">
+      <div class="flex flex-column w-full">
+        <div class="text-center m-2 overflow-hidden w-full">
+          <h3 class="text-lg font-medium text-gray-800 mb-2">{{ product?.name }}</h3>
+          <p class="text-sm text-gray-600 line-height-3 h-5rem">{{ product?.shortDescription }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-grow-0 justify-content-center mb-2">
+      <button
+        pButton
+        label="View Details"
+        class="p-button-outlined p-button-sm"
+      ></button>
+    </div>
+
+  </div>
+
+</div>
+
