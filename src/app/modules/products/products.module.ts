@@ -8,6 +8,9 @@ import {FormsModule} from "@angular/forms";
 import {Button} from "primeng/button";
 import {SkeletonModule} from "primeng/skeleton";
 import {ProductCardComponent} from "./components/product-card/product-card.component";
+import {ImageModule} from "primeng/image";
+import {DividerModule} from "primeng/divider";
+import {TagModule} from "primeng/tag";
 
 @NgModule({
   declarations: [ProductsListComponent,ProductDetailsComponent],
@@ -20,6 +23,9 @@ import {ProductCardComponent} from "./components/product-card/product-card.compo
     Button,
     SkeletonModule,
     ProductCardComponent,
+    ImageModule,
+    DividerModule,
+    TagModule,
 
   ]
 })

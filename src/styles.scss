@@ -4,3 +4,8 @@
 @import "primeflex/themes/primeone-light.css";
 @import "primeicons/primeicons.css";
 
+::ng-deep .p-menubar .p-menuitem-link:hover {
+  background-color: #ff9800; /* Set your desired hover background color */
+  color: white; /* Set the text color on hover */
+}
+

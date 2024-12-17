@@ -1,6 +1,40 @@
-<div class="flex flex-column p-1">
-  <div class="flex-grow-1">
-    <img *ngIf="product?.imageUrl" ngSrc="{{product?.imageUrl}}" width="300" height="400" alt="{{product?.name}}">
+<div class="col-12 sm:col-10 md:col-8 lg:col-10 flex mx-auto mt-4">
+  <div class="card w-full shadow-2 p-4 flex flex-column gap-4 border-round">
+
+    <!-- Product Header Section -->
+    <div class="flex flex-column md:flex-row align-items-center gap-4">
+      <!-- Product Image -->
+      <div class="border-round overflow-hidden flex-shrink-0">
+        <img
+          [src]="product?.imageUrl"
+          alt="Product Image" style="object-fit:cover"/>
+      </div>
+
+      <!-- Product Info -->
+      <div class="flex flex-column gap-2 w-full">
+        <div class="text-2xl font-bold text-center md:text-left text-black-alpha-90">
+          {{ product?.name }}
+        </div>
+        <div class="text-md text-center md:text-left text-black-alpha-70">
+          {{ product?.shortDescription }}
+        </div>
+        <div class="flex justify-content-center sm:justify-content-center md:justify-content-start  gap-2">
+          <span class="font-semibold text-md">Category:</span>
+          <p-tag severity="info" [value]="product?.category"></p-tag>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <p-divider></p-divider>
+
+    <!-- Product Details Section -->
+    <div>
+      <div class="text-xl font-semibold text-black-alpha-90 mb-2">Details</div>
+      <div class="text-black-alpha-70 line-height-3">
+        {{ product?.description }}
+      </div>
+    </div>
+
   </div>
-  <div class="text-lg flex-grow-0">{{ product?.name }}</div>
 </div>

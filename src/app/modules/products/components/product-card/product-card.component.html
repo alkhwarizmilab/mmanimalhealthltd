@@ -5,10 +5,10 @@
   <!-- Product Image -->
   <div class="w-full flex justify-content-center border-round max-h-20rem">
     <img *ngIf="!product.shimmer"
-      [src]="'https://placehold.co/600x600'"
+      [src]="product.imageUrl"
       [alt]="product?.name"
       class="w-full border-round"
-      style="object-fit: cover;"
+      style="object-fit: fill;"
     />
   </div>
 
