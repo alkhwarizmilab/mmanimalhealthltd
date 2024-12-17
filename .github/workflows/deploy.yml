@@ -24,7 +24,7 @@ jobs:
           cache: 'npm'
 
       - name: Install Dependencies
-        run: npm ci
+        run: npm i
 
       - name: Build Angular
         run: npm run build -c=production && cp dist/mmanimalhealthltd/browser/index.html dist/mmanimalhealthltd/browser/404.html
