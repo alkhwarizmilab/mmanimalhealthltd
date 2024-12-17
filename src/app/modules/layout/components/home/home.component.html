@@ -1,60 +1,59 @@
-<div class="col-12 sm:col-12 md:col-12 lg:col-10 m-auto">
-  <p-carousel *ngIf="carousel.length"
-    [value]="carousel"
-    [numVisible]="3"
-    [numScroll]="1"
-    [circular]="true"
-    [autoplayInterval]="3000"
-    [responsiveOptions]="responsiveOptions">
-    <ng-template let-product pTemplate="item">
-      <div class=" border-none m-2 p-3">
-        <div class="mb-3">
-          <div class="relative mx-auto w-full">
-            <img src="{{product.imageUrl}}" [alt]="product.name" height="300" width="500" class="w-full border-round"/>
-            <div class="absolute  p-2 w-full font-bold  text-black-alpha-60"
-                 style="height: auto; width: 100%; background: linear-gradient(to bottom, white, transparent);"
-                 [ngStyle]="{ 'left.px': 0, 'top.px': 0 }">
-              <div class="p-2">
-                {{ product.name }}
-              </div>
-            </div>
-          </div>
-        </div>
+<p-carousel *ngIf="carousel.length"
+            [value]="carousel"
+            [numVisible]="3"
+            [numScroll]="1"
+            [circular]="true"
+            [autoplayInterval]="3000"
+            [responsiveOptions]="responsiveOptions">
+  <ng-template let-product pTemplate="item">
+    <div class="flex flex-column mx-auto">
+      <div class="p-2">
+        <img src="{{'https://placehold.co/800x400'}}" [alt]="product.name" style="object-fit:cover"
+             class="w-full border-round"/>
       </div>
-    </ng-template>
-  </p-carousel>
-  <p-carousel *ngIf="!carousel.length" #shimmer
-    [value]="[1,2,3]"
-    [numVisible]="3"
-    [numScroll]="3"
-    [circular]="false"
-    [autoplayInterval]="3000"
-    [responsiveOptions]="responsiveOptions">
-    <ng-template let-product pTemplate="item">
-      <div class=" border-none m-2 p-3">
-        <div class="mb-3">
-          <div class="relative mx-auto w-full">
-<!--            <img src="{{product.imageUrl}}" [alt]="product.name" height="300" width="500" class="w-full border-round"/>-->
-            <div style="width:500px;height:300px">
-              <p-skeleton styleClass="w-full h-full"></p-skeleton>
 
-            </div>
-            <div class="absolute  p-2 w-full font-bold  text-black-alpha-60"
-                 style="height: auto; width: 100%; background: linear-gradient(to bottom, white, transparent);"
-                 [ngStyle]="{ 'left.px': 0, 'top.px': 0 }">
-              <div class="p-2">
-                {{ product.name }}
-              </div>
+      <div class="flex justify-content-center font-bold text-black-alpha-60">
+        {{ product.name }}
+      </div>
+    </div>
+  </ng-template>
+</p-carousel>
+<p-carousel *ngIf="!carousel.length" #shimmer
+            [value]="[1,2,3]"
+            [numVisible]="3"
+            [numScroll]="3"
+            [circular]="false"
+            [autoplayInterval]="3000"
+            [responsiveOptions]="responsiveOptions">
+  <ng-template let-product pTemplate="item">
+    <div class=" border-none m-2 p-3">
+      <div class="mb-3">
+        <div class="relative mx-auto w-full">
+          <!--            <img src="{{product.imageUrl}}" [alt]="product.name" height="300" width="500" class="w-full border-round"/>-->
+          <div style="width:500px;height:300px">
+            <p-skeleton styleClass="w-full h-full"></p-skeleton>
+
+          </div>
+          <div class="absolute  p-2 w-full font-bold  text-black-alpha-60"
+               style="height: auto; width: 100%; background: linear-gradient(to bottom, white, transparent);"
+               [ngStyle]="{ 'left.px': 0, 'top.px': 0 }">
+            <div class="p-2">
+              {{ product.name }}
             </div>
           </div>
         </div>
       </div>
-    </ng-template>
-  </p-carousel>
+    </div>
+  </ng-template>
+</p-carousel>
+
+<div class="col-12 sm:col-12 md:col-10 lg:col-10 mx-auto mt-5">
   <div class="flex flex-column gap-5">
-    <p-card styleClass="" header="Company Summery">
+    <div class="border-0 border-100 border-round shadow-none" >
+
+<app-card-title title="Company Summery"></app-card-title>
       <div class="flex flex-column sm:flex-column md:flex-row lg:flex-row justify-content-center  ">
-        <div class="flex-1">
+        <div class="flex-1 fadeinleft animation-ease-in-out animation-duration-1000">
           <p class="line-height-3 px-5 text-justify">
             In the year 2015, Munni Enterprise extended its business operation from supply business to a full time
             company with ensuring quality product and technical support to the animal health & fisheries sector of
@@ -77,19 +76,20 @@
 
 
         </div>
-        <div class="flex-1">
+        <div class="flex-1 fadeinright animation-ease-in-out animation-duration-1000">
           <div class="p-3 w-12 sm:w-12 m-auto">
-            <p-card header="Bodrul Amin" subheader="Message from CEO">
+            <p-card  styleClass="border-1 text-center border-100 border-round shadow-none" header="Bodrul Amin" subheader="Message from CEO">
               <ng-template pTemplate="header">
                 <div class="flex justify-content-center">
-                  <div class="inline-block w-10rem h-10rem mt-2 overflow-hidden border-round border-circle flex justify-content-center">
+                  <div
+                    class="inline-block w-10rem h-10rem mt-2 overflow-hidden border-round border-circle flex justify-content-center">
                     <p-image src="images/product-images/img_2.png"/>
                   </div>
                 </div>
 
 
               </ng-template>
-              <p class="line-height-3 px-5 text-justify">
+              <p class="line-height-3 font-semibold px-5 text-justify fadeinup animation-ease-in-out animation-duration-1000" >
                 In the year 2015, Munni Enterprise extended its business operation from supply business to a full time
                 company with ensuring quality product and technical support to the animal health & fisheries sector of
                 Bangladesh With this view, M. M Animal Health, a sister concern of Munni Enterprise was established in
@@ -104,60 +104,39 @@
         </div>
       </div>
 
-    </p-card>
+    </div>
 
-    <p-card>
-      <ng-template pTemplate="header">
-        <div class="p-card-body  flex justify-content-between">
-          <div class="p-card-title">Products</div>
-          <div style="margin-top:-10px">
-            <p-button label="All Products" size="small" iconPos="right" icon="pi pi-arrow-right" [outlined]="true"
-                      routerLink="products"></p-button>
-          </div>
-        </div>
-      </ng-template>
+    <div class="">
+      <div class="flex justify-content-center m-2">
+        <p-divider align="center" type="solid" />
+        <div class="font-bold text-xl p-2 border-round  surface-300">Products</div>
+        <p-divider />
+
+      </div>
+<!--      <div class="flex justify-content-end">-->
+<!--        <p-button label="All Products" size="small" iconPos="right" icon="pi pi-arrow-right" [outlined]="true"-->
+<!--                  routerLink="products"></p-button>-->
+<!--      </div>-->
+
 
       <div class="flex flex-wrap justify-content-center">
-        <div class="flex" *ngFor="let product of featuredProducts; index as i; ">
-          <div [routerLink]="'products/'+product.id"
-               class="p-card m-1 sm:m-1 md:m-2 lg:m-3 p-3 cursor-pointer transition-colors transition-duration-500 hover:bg-black-alpha-10 hover:text-gray-900">
-            <div class="flex flex-column p-1 w-8rem h-15rem sm:w-10rem sm:h-15rem md:h-25rem md:w-18rem" >
-              <div class="flex flex-grow-1">
-                <img src="{{product?.imageUrl}}" style="width:100%;height:100%; object-fit: contain" alt="{{product.name}}">
-              </div>
-              <div class="flex-grow-0">{{ product.name }}</div>
-            </div>
 
-          </div>
+        <div
+          *ngFor="let product of featuredProducts"
+          class="w-full w-6 sm:w-6 md:w-4 lg:w-4 xl:w-4 p-1"
+        >
+          <app-product-card
+            [product]="product"
+          ></app-product-card>
         </div>
 
       </div>
-      <div #shimmer *ngIf="!featuredProducts.length" class="flex flex-wrap justify-content-center">
-        <div class="flex" *ngFor="let product of [1,2,3]; index as i; ">
-          <div class="flex p-card m-3 p-3 cursor-pointer transition-colors transition-duration-500 hover:bg-black-alpha-10 hover:text-gray-900">
-            <div class="flex flex-column p-1">
-              <div class="flex-grow-1">
-                <!--            <img ngSrc="{{product.imageUrl || 'a'}}" width="300" height="400" alt="{{product.name}}">-->
-                <div style="width:300px;height:400px">
-                  <p-skeleton styleClass="w-full h-full" ></p-skeleton>
-                </div>
-              </div>
-              <!--          <div class="text-lg flex-grow-0">{{ product.name }}</div>-->
-              <div class="text-lg flex-grow-0 mt-2">
-                <p-skeleton></p-skeleton>
-              </div>
-            </div>
 
-          </div>
-
-        </div>
-      </div>
-
-      <div class="flex justify-content-center p-2">
+      <div class="flex justify-content-center pt-2">
         <p-button severity="secondary" label="View All Products" routerLink="products"></p-button>
 
       </div>
-    </p-card>
+    </div>
 
   </div>
 

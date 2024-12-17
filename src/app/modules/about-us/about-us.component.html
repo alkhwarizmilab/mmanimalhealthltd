@@ -1,10 +1,11 @@
 <div class="grid justify-content-center">
-  <div class="flex col-11 sm:col-11 md:col-10 lgcol-8 flex-column gap-5">
-    <p-card styleClass="mt-5" header="About Us">
-      <div class="flex flex-column sm:flex-column md:flex-row lg:flex-row justify-content-center  ">
+  <div class=" fadeindown animation-ease-in-out animation-duration-1000 flex col-11 sm:col-11 md:col-10 lgcol-8 flex-column gap-5">
+    <div class="">
+      <app-card-title title="About Us"></app-card-title>
+      <div class=" flex flex-column sm:flex-column md:flex-row lg:flex-row justify-content-center  ">
         <div class="flex-1">
           <div class="flex align-items-center border-bottom-1 surface-border w-full">
-            <p class="line-height-3 px-5 text-justify">
+            <p class="line-height-3 px-5 text-justify ">
               In the year 2015, Munni Enterprise extended its business operation from supply business to a full time
               company with ensuring quality product and technical support to the animal health & fisheries sector of
               Bangladesh With this view, M. M Animal Health, a sister concern of Munni Enterprise was established in
@@ -42,9 +43,10 @@
         </div>
       </div>
 
-    </p-card>
+    </div>
 
-    <p-card styleClass="" header="Mission and Vision">
+    <div class="border-1 border-100 border-round shadow-2">
+      <app-card-title title="Mission and Vision"></app-card-title>
       <div class="px-5">
         <h3>Mission</h3>
         <p>
@@ -64,21 +66,21 @@
       </div>
 
 
-    </p-card>
-    <p-card styleClass="" header="Our Believes">
-
+    </div>
+    <div
+    >
+      <app-card-title title="Our Believes"></app-card-title>
       <div class="flex flex-row flex-wrap justify-content-center">
         <div
           *ngFor="let b of believes; index as i;"
           [ngStyle]="{'background-color': getRandomLightColor()}"
-          class="flex p-2 m-2 shadow-1 border-round">
+          class="flex p-2 m-2 shadow-1 border-round fadeinup animation-duration-1000">
           {{ b }}
         </div>
       </div>
 
 
-
-    </p-card>
+    </div>
 
   </div>
 </div>

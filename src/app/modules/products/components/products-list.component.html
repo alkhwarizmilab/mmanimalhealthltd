@@ -1,8 +1,14 @@
-<div class="col-12 sm:col-12 md:col-12 lg:col-12 mx-auto">
+<div class="col-12 sm:col-12 md:col-10 lg:col-10 mx-auto">
   <div class="flex flex-wrap justify-content-center">
-    <div *ngFor="let product of products; index as i; " class="w-4 sm:w-6 md:w-4 lg:w-3 m-3">
-      <app-product-card [routerLink]="['/products', product.id]"
-                          [state]="product" [product]="product" ></app-product-card>
+    <div
+      *ngFor="let product of products"
+      class="w-full w-6 sm:w-6 md:w-4 lg:w-4 xl:w-4 p-1"
+    >
+      <app-product-card
+        [routerLink]="['/products', product.id]"
+        [state]="product"
+        [product]="product"
+      ></app-product-card>
     </div>
   </div>
 

@@ -3,6 +3,8 @@ import {CardModule} from "primeng/card";
 import {TagModule} from "primeng/tag";
 import {Button} from "primeng/button";
 import {NgForOf, NgStyle} from "@angular/common";
+import {DividerModule} from "primeng/divider";
+import {CardTitleComponent} from "./card-title/card-title.component";
 
 @Component({
   selector: 'app-about-us',
@@ -12,7 +14,9 @@ import {NgForOf, NgStyle} from "@angular/common";
     TagModule,
     Button,
     NgForOf,
-    NgStyle
+    NgStyle,
+    DividerModule,
+    CardTitleComponent
   ],
   templateUrl: './about-us.component.html',
   styleUrl: './about-us.component.scss',

@@ -9,6 +9,10 @@ import {Button} from "primeng/button";
 import {SkeletonModule} from "primeng/skeleton";
 import {AvatarModule} from "primeng/avatar";
 import {ImageModule} from "primeng/image";
+import {ProductCardComponent} from "../../../products/components/product-card/product-card.component";
+import {DividerModule} from "primeng/divider";
+import {AnimateOnScrollModule} from "primeng/animateonscroll";
+import {CardTitleComponent} from "../../../about-us/card-title/card-title.component";
 
 @Component({
   selector: 'app-home',
@@ -24,7 +28,11 @@ import {ImageModule} from "primeng/image";
     AvatarModule,
     ImageModule,
     NgForOf,
-    NgIf
+    NgIf,
+    ProductCardComponent,
+    DividerModule,
+    AnimateOnScrollModule,
+    CardTitleComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
@@ -37,7 +45,7 @@ export class HomeComponent implements OnInit {
   responsiveOptions = [
     {
       breakpoint: '1199px',
-      numVisible: 1,
+      numVisible: 3,
       numScroll: 1
     },
     {
@@ -111,31 +119,17 @@ export class HomeComponent implements OnInit {
 
   ];
   featuredProducts: any[] = [
-    // {
-    //   name: 'Welcome to M.M Animal Health',
-    //   image: 'images/product-images/img.png',
-    //   inventoryStatus: 'INSTOCK'
-    // }, {
-    //   name: 'Featured Product',
-    //   image: 'images/product-images/img_1.png',
-    //   inventoryStatus: 'INSTOCK'
-    // }, {
-    //   name: 'Global Partners',
-    //   image: 'images/product-images/img_2.png',
-    //   inventoryStatus: 'INSTOCK'
-    // },{
-    //   name: 'Welcome to M.M Animal Health',
-    //   image: 'images/product-images/img.png',
-    //   inventoryStatus: 'INSTOCK'
-    // }, {
-    //   name: 'Featured Product',
-    //   image: 'images/product-images/img_1.png',
-    //   inventoryStatus: 'INSTOCK'
-    // }, {
-    //   name: 'Global Partners',
-    //   image: 'images/product-images/img_2.png',
-    //   inventoryStatus: 'INSTOCK'
-    // },
+    {
+      shimmer: true
+    },  {
+      shimmer: true
+    },  {
+      shimmer: true
+    },  {
+      shimmer: true
+    },  {
+      shimmer: true
+    },
 
   ];
 
