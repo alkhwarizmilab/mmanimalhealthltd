@@ -29,6 +29,7 @@ export class ProductService {
 
   fetchProducts(): Observable<any> {
     const itemCollection = collection(this.firestore, 'products');
+    // @ts-ignore
     return collectionData<Product>(itemCollection, {idField: 'id'});
   }
 
