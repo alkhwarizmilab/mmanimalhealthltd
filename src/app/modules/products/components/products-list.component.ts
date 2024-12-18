@@ -38,8 +38,15 @@ export class ProductsListComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.productService.fetchProducts().subscribe(data =>
-    {
+    this.fetchProducts();
+    if (window !== undefined) {
+      window.scrollTo(0, 0);
+    }
+  }
+
+
+  private fetchProducts() {
+    this.productService.fetchProducts().subscribe(data => {
       this.products = data
       let productMap = new Map();
       this.products.map(products => {
@@ -47,18 +54,8 @@ export class ProductsListComponent implements OnInit {
       })
       this.productService.productMap = productMap;
     });
-    if (window !== undefined) {
-      window.scrollTo(0, 0);
-    }
   }
 
 
-  addproducts() {
-    this.products.forEach(value => {
-      this.productService.addProduct(value).then(r => {
-
-      });
-    })
-  }
 
 }

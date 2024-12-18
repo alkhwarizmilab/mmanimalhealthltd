@@ -20,9 +20,9 @@ export class ProductDetailsComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.product = this.productService.productMap.get(params['id']);
       if (!this.product) {
-        this.productService.fetchProductById(params['id']).subscribe(value => {
-          this.product = value;
-        });
+        // this.productService.fetchProductById(params['id']).subscribe(value => {
+        //   this.product = value;
+        // });
       }
     });
 

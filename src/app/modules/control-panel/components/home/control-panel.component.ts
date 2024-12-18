@@ -17,6 +17,7 @@ export class ControlPanelComponent implements OnInit {
     this.items = [
       {
         label: 'Add Product', icon: 'pi pi-plus', command: () => {
+
         }
       },
       {

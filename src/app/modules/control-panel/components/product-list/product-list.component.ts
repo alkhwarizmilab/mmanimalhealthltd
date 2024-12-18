@@ -16,7 +16,8 @@ export class ProductListComponent implements OnInit {
   products: Product[] = [];
   showProductInfoDialog: any;
   productInfoHeader = 'Product Details';
-  currentProduct: any
+  productDialogMode = 'new';
+  currentProduct: Product
   uploadedFiles: any;
   selectedFile: any
   previewURL: any;
@@ -40,30 +41,51 @@ export class ProductListComponent implements OnInit {
   }
 
   viewProduct(item: any) {
+    this.productDialogMode = 'view'
     this.showProductInfoDialog = true;
     this.productInfoHeader = 'View Product'
     this.currentProduct = {...item};
   }
 
+  addProductDialog() {
+    this.productDialogMode = 'new'
+    this.showProductInfoDialog = true;
+    this.productInfoHeader = 'Add Product'
+    this.currentProduct = {category: "", description: "", id: "", name: "", price: 0, shortDescription: "", stock: 0}
+  }
+
   showEditDialog(item: any) {
+    this.productDialogMode = 'edit'
     this.currentProduct = {...item};
     this.showProductInfoDialog = true;
     this.productInfoHeader = 'Edit Product'
   }
 
   updateProduct() {
-
-    if( this.selectedFile){
-      this.productService.uploadFile(this.currentProduct.id,this.selectedFile).then((res) => {
-        console.log(ref);
-      })
+    let formData = new FormData();
+    formData.append('product', JSON.stringify(this.currentProduct));
+    if (this.selectedFile) {
+      formData.append('image', this.selectedFile);
     }
+    this.productService.updateProduct(formData,this.currentProduct.id).subscribe(value => {
+      this.fetchProducts();
+    });
+    this.showProductInfoDialog = false;
 
+  }
 
-    // this.productService.updateProduct(this.currentProduct).then(value => {
-    //   this.fetchProducts();
-    //   this.showProductInfoDialog = false;
-    // })
+  addProduct() {
+    let formData = new FormData();
+    formData.append('product', JSON.stringify(this.currentProduct));
+    if (this.selectedFile) {
+      formData.append('image', this.selectedFile);
+
+    }
+    this.productService.addProduct(formData).subscribe(value => {
+      this.fetchProducts();
+    });
+    this.showProductInfoDialog = false;
+
   }
 
   deleteProduct(item: any) {
@@ -71,9 +93,9 @@ export class ProductListComponent implements OnInit {
       header: 'Confirmation',
       message: 'Are you sure you want to delete this product ?',
       accept: () => {
-        this.productService.deleteProduct(item).then(value => {
-          console.log(value);
+        this.productService.deleteProduct(item.id).subscribe(value => {
           this.fetchProducts();
+          this.showProductInfoDialog = false;
 
         })
       }, reject: () => {

@@ -1,0 +1,185 @@
+{
+  "products": [
+    {
+      "id": "G27fJDFlFpsKUP5C0g9t",
+      "description": "      this.showProductInfoDialog = false;\n      this.showProductInfoDialog = false;\n      this.showProductInfoDialog = false;\n",
+      "stock": 150,
+      "name": "Global Partners",
+      "imageUrl": "images/product-images/img_2.png",
+      "shortDescription": "      this.showProductInfoDialog = false;      this.showProductInfoDialog = false;      this.showProductInfoDialog = false;      this.showProductInfoDialog = false;      this.showProductInfoDialog = false;",
+      "category": "Global Solutions",
+      "price": 69.99
+    },
+    {
+      "price": 89.99,
+      "description": "Our top-quality featured product.",
+      "stock": 200,
+      "id": "GdxvVFMptFIfUCbAPFcr",
+      "name": "Featured Product",
+      "imageUrl": "images/product-images/img_1.png",
+      "category": "Featured"
+    },
+    {
+      "description": "Our top-quality featured product.",
+      "category": "Featured",
+      "stock": 200,
+      "id": "HPnbl1IsUXjUARgNHWGf",
+      "name": "Featured Product",
+      "imageUrl": "images/product-images/img_1.png",
+      "price": 89.99
+    },
+    {
+      "stock": 100,
+      "imageUrl": "images/product-images/img.png",
+      "category": "Animal Health",
+      "id": "Hd6soavEOcqPjDZM9PqC",
+      "name": "Welcome to M.M Animal Health",
+      "price": 49.99,
+      "description": "A reliable choice for animal care."
+    },
+    {
+      "id": "I1NxlMzLUcfjbwRCPose",
+      "price": 49.99,
+      "category": "Animal Health",
+      "description": "A comprehensive solution for animal health care.",
+      "imageUrl": "images/product-images/img.png",
+      "stock": 100,
+      "name": "Welcome to M.M Animal Health"
+    },
+    {
+      "stock": 100,
+      "description": "A comprehensive solution for animal health care.",
+      "id": "PG8bwL2BgA0H8FA1L75u",
+      "category": "Animal Health",
+      "name": "Welcome to M.M Animal Health",
+      "imageUrl": "images/product-images/img.png",
+      "price": 49.99
+    },
+    {
+      "description": "Premium products from around the globe.",
+      "category": "Global Solutions",
+      "imageUrl": "images/product-images/img_2.png",
+      "id": "PTVjDGOPcZjxzNMPB56K",
+      "price": 69.99,
+      "stock": 150,
+      "name": "Global Partners"
+    },
+    {
+      "description": "A reliable choice for animal care.",
+      "stock": 100,
+      "price": 49.99,
+      "category": "Animal Health",
+      "name": "Welcome to M.M Animal Health",
+      "id": "TA2KbPSHh34CHFQZK3vm",
+      "imageUrl": "images/product-images/img.png"
+    },
+    {
+      "description": "Trusted solutions from our global partners.",
+      "name": "Global Partners",
+      "price": 69.99,
+      "id": "TmcLlDLGPuijLFOQ2cUT",
+      "category": "Global Solutions",
+      "imageUrl": "images/product-images/img_2.png",
+      "stock": 150
+    },
+    {
+      "name": "Global Partners",
+      "stock": 150,
+      "category": "Global Solutions",
+      "imageUrl": "images/product-images/img_2.png",
+      "id": "Y36oXX70MtBPq9WN97Wf",
+      "price": 69.99,
+      "description": "Trusted solutions from our global partners."
+    },
+    {
+      "category": "Global Solutions",
+      "name": "Global Partners",
+      "id": "YriMjiz5Aein6SP0zMUg",
+      "stock": 150,
+      "description": "Premium products from around the globe.",
+      "imageUrl": "images/product-images/img_2.png",
+      "price": 69.99
+    },
+    {
+      "name": "Welcome to M.M Animal Health",
+      "imageUrl": "images/product-images/img.png",
+      "id": "aPsb9WTV2afLpeRscCvz",
+      "category": "Animal Health",
+      "price": 49.99,
+      "stock": 100,
+      "description": "A comprehensive solution for animal health care."
+    },
+    {
+      "price": 69.99,
+      "stock": 150,
+      "category": "Global Solutions",
+      "description": "Trusted solutions from our global partners.",
+      "name": "Global Partners",
+      "imageUrl": "images/product-images/img_2.png",
+      "id": "dpscSmD6vBMgjfnFBzSb"
+    },
+    {
+      "name": "Welcome to M.M Animal Health",
+      "price": 49.99,
+      "id": "jWkmXqWzjCczRdeLyx0z",
+      "category": "Animal Health",
+      "stock": 100,
+      "description": "A comprehensive solution for animal health care.",
+      "imageUrl": "images/product-images/img.png"
+    },
+    {
+      "description": "Best-selling featured item.",
+      "stock": 200,
+      "price": 89.99,
+      "name": "Featured Product",
+      "imageUrl": "images/product-images/img_1.png",
+      "category": "Featured",
+      "id": "jdo3Z9eb1C5uJTPqPq84"
+    },
+    {
+      "stock": 200,
+      "description": "Best-selling featured item.",
+      "name": "Featured Product",
+      "price": 89.99,
+      "imageUrl": "images/product-images/img_1.png",
+      "id": "lQWwoPAJ7ClHUYW207OK",
+      "category": "Featured"
+    },
+    {
+      "category": "Global Solutions",
+      "name": "Global Partners",
+      "stock": 150,
+      "id": "m6xG4dRXER2bRkLHASi2",
+      "description": "Premium products from around the globe.",
+      "imageUrl": "images/product-images/img_2.png",
+      "price": 69.99
+    },
+    {
+      "category": "Featured",
+      "imageUrl": "images/product-images/img_1.png",
+      "price": 89.99,
+      "name": "Featured Product",
+      "stock": 200,
+      "id": "mp5UQ62zfDV4g4IxO0W7",
+      "description": "Best-selling featured item."
+    },
+    {
+      "id": "xz9qu3sjhVk4u9WgRf81",
+      "price": 49.99,
+      "stock": 100,
+      "description": "A reliable choice for animal care.",
+      "category": "Animal Health",
+      "name": "Welcome to M.M Animal Health",
+      "imageUrl": "images/product-images/img.png"
+    },
+    {
+      "category": "Featured",
+      "price": 89.99,
+      "name": "Featured Product",
+      "imageUrl": "images/product-images/img_1.png",
+      "description": "Our top-quality featured product.",
+      "id": "z1i48utYdOloYI0YGHDi",
+      "stock": 200
+    }
+  ]
+}
