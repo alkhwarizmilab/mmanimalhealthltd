@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import {API_BASE_URL} from "../environments/environment";
 
 describe('AppComponent', () => {
   beforeEach(async () => {

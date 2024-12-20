@@ -10,7 +10,7 @@ import {ref} from "@angular/fire/storage";
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.scss'
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent {
   layout: string = 'list';
 
   products: Product[] = [];
@@ -23,9 +23,6 @@ export class ProductListComponent implements OnInit {
   previewURL: any;
 
   constructor(private productService: ProductService, private confirmationService: ConfirmationService) {
-  }
-
-  ngOnInit() {
     this.fetchProducts();
   }
 

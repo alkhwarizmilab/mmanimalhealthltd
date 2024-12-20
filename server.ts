@@ -10,10 +10,14 @@ import multer from 'multer';
 import {randomUUID} from "node:crypto";
 import fs from 'fs';
 import cors from 'cors';
+import {API_BASE_URL} from "./src/environments/environment";
 
 
-function deleteFile(filePath: string): void {
+function deleteFile(fileUrl: string): void {
   // Check if the file exists
+  let baseUrl = API_BASE_URL + "/"
+  const filePath = fileUrl.replace(new RegExp(`^${baseUrl}`), '');
+
   fs.access(filePath, fs.constants.F_OK, (err) => {
     if (err) {
       console.error(`File does not exist: ${filePath}`);
@@ -42,7 +46,7 @@ export function app(): express.Express {
   const upload = multer({
     storage: multer.diskStorage({
       destination: (req, file, cb) => {
-        const uploadPath = './images';
+        const uploadPath = './uploads';
         cb(null, uploadPath); // Save files in the 'uploads' folder
       },
       filename: (req, file, cb) => {
@@ -55,7 +59,7 @@ export function app(): express.Express {
     },
   });
 
-  server.use('.images/', express.static('./images'));
+  server.use('.uploads/', express.static('./uploads'));
   server.use(cors());
 
   server.set('view engine', 'html');
@@ -67,9 +71,20 @@ export function app(): express.Express {
 
   server.get('/api/products', async (req, res) => {
     await db.read();
-    db.data ||= {products: []};
-    res.json(db.data.products);
+    db.data ||= { products: [] };
+
+    const { category } = req.query;  // Get the category from the query string
+
+    let products = db.data.products;
+
+    if (category) {
+      // Filter the products based on the category if provided
+      products = products.filter(product => product.category === category);
+    }
+
+    res.json(products);
   });
+
 
   server.post(
     '/api/products',
@@ -78,7 +93,8 @@ export function app(): express.Express {
       await db.read();
       db.data ||= {products: []};
       let product = JSON.parse(req.body.product);
-      product.imageUrl = req.file ? req.file.path : product.imageUrl;
+      product.imageUrl = req.file ? API_BASE_URL + "/" + req.file.path : product.imageUrl;
+      console.log(req.file);
       product.id = randomUUID();
       db.data.products.push(product);
       await db.write();
@@ -100,7 +116,7 @@ export function app(): express.Express {
 
       if (req.file) {
         deleteFile(dbProduct.imageUrl);
-        product.imageUrl = req.file.path;
+        product.imageUrl = API_BASE_URL + "/" + req.file.path;
       }
 
       if (dbProduct.imageUrl && !product.imageUrl) {
@@ -116,15 +132,15 @@ export function app(): express.Express {
 
   server.delete('/api/products/:id', async (req: any, res: any) => {
     await db.read();
-    db.data ||= { products: [] };
+    db.data ||= {products: []};
 
     const productId = req.params.id;
 
     // Find the product by id
     const productIndex = db.data.products.findIndex(p => p.id === productId);
-
+    deleteFile(db.data.products[productIndex].imageUrl);
     if (productIndex === -1) {
-      return res.status(404).json({ error: 'Product not found' });
+      return res.status(404).json({error: 'Product not found'});
     }
 
     // Delete the product by index
@@ -133,7 +149,7 @@ export function app(): express.Express {
     // Write the changes to the database
     await db.write();
 
-    res.status(200).json({ message: 'Product deleted successfully' });
+    res.status(200).json({message: 'Product deleted successfully'});
   });
 
 
