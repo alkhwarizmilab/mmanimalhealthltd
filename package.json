@@ -4,11 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href=/mmanimalhealthltd/",
+    "build": "ng build",
+    "build:prod": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "watch-server": "ng build --watch --configuration development",
     "test": "ng test",
     "run-server": "ng build && cd dist/mmanimalhealthltd/browser && node ../server/server.mjs",
+    "server:debug": "nodemon dist/mmanimalhealthltd/server/server.mjs",
     "serve:ssr:mmanimalhealthltd": "node dist/mmanimalhealthltd/server/server.mjs"
   },
   "private": true,
@@ -47,6 +49,9 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "tsc": "^2.0.4",
     "typescript": "~5.4.2"
   }
 }

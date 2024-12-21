@@ -12,7 +12,6 @@ import fs from 'fs';
 import cors from 'cors';
 import {API_BASE_URL} from "./src/environments/environment";
 
-
 function deleteFile(fileUrl: string): void {
   // Check if the file exists
   let baseUrl = API_BASE_URL + "/"
@@ -153,10 +152,7 @@ export function app(): express.Express {
   });
 
 
-  server.get('**', express.static(browserDistFolder, {
-    maxAge: '1y',
-    index: 'index.html',
-  }));
+
 
   // All regular routes use the Angular engine
   server.get('**', (req, res, next) => {

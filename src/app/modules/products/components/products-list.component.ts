@@ -39,9 +39,12 @@ export class ProductsListComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchProducts();
-    if (window !== undefined) {
+    try {
       window.scrollTo(0, 0);
+    } catch (e){
+
     }
+
   }
 
 

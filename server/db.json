@@ -1,0 +1,14 @@
+{
+  "products": [
+    {
+      "category": "sf",
+      "description": "sf",
+      "id": "6b2bdea6-e9d9-4edd-995c-5bbb329b9056",
+      "name": "sfd",
+      "price": 0,
+      "shortDescription": "sf",
+      "stock": 0,
+      "imageUrl": "http://localhost:4000/uploads/1734795682379-751924257-db3pnif-24dc8e1f-6e3c-4448-a9d6-0b0a138bbb38.png"
+    }
+  ]
+}
