@@ -4,7 +4,6 @@ import { Low } from 'lowdb';
 import multer from 'multer';
 import { randomUUID } from 'crypto';
 import fs from 'fs';
-import path from 'path';
 import cors from 'cors';
 import dotenv from 'dotenv';
 dotenv.config();
@@ -36,7 +35,7 @@ export function app() {
   const upload = multer({
     storage: multer.diskStorage({
       destination: (req, file, cb) => {
-        const uploadPath = './uploads';
+        const uploadPath = process.env.UPLOAD_DIR;
         cb(null, uploadPath); // Save files in the 'uploads' folder
       },
       filename: (req, file, cb) => {
@@ -49,21 +48,6 @@ export function app() {
     },
   });
   app.use(cors());
-  app.use(express.static('./files'));
-  const staticFilesPath = path.resolve(process.env.STATIC_FOLDER);
-  app.set('view engine', 'html');
-  app.set('views', staticFilesPath);
-
-  app.get('**', express.static(staticFilesPath, {
-    maxAge: '1y',
-    index: 'index.html',
-  }));
-  app.use((err, req, res, next) => {
-    console.error(err.stack); // Log error stack for debugging
-
-    // Serve the 404.html file for any errors
-    res.status(err.status || 404).sendFile(path.resolve(staticFilesPath+'/index.html'));
-  });
 
   app.use('/api', express.json()); // Middleware for JSON parsing
   const adapter = new JSONFile(process.env.DB_PATH);
