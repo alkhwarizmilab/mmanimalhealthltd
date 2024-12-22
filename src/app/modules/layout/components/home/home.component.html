@@ -1,53 +1,54 @@
-<p-carousel *ngIf="carousel.length"
-            [value]="carousel"
-            [numVisible]="3"
-            [numScroll]="1"
-            [circular]="true"
-            [autoplayInterval]="3000"
-            [responsiveOptions]="responsiveOptions">
-  <ng-template let-product pTemplate="item">
-    <div class="flex flex-column mx-auto">
-      <div class="p-2" style="width:500px;height:300px">
-        <img src="{{product.imageUrl}}" [alt]="product.name" style="width:100%; height: 100%; object-fit:fill"
-             class="w-full border-round"/>
-      </div>
 
-      <div class="flex justify-content-center font-bold text-black-alpha-60">
-        {{ product.name }}
-      </div>
-    </div>
-  </ng-template>
-</p-carousel>
-<p-carousel *ngIf="!carousel.length" #shimmer
-            [value]="[1,2,3]"
-            [numVisible]="3"
-            [numScroll]="3"
-            [circular]="false"
-            [autoplayInterval]="3000"
-            [responsiveOptions]="responsiveOptions">
-  <ng-template let-product pTemplate="item">
-    <div class=" border-none m-2 p-3">
-      <div class="mb-3">
-        <div class="relative mx-auto w-full">
-          <!--            <img src="{{product.imageUrl}}" [alt]="product.name" height="300" width="500" class="w-full border-round"/>-->
-          <div style="width:500px;height:300px">
-            <p-skeleton styleClass="w-full h-full"></p-skeleton>
+<div class="col-12 sm:col-12 md:col-10 lg:col-10 mx-auto mt-5">
+  <p-carousel *ngIf="carousel.length"
+              [value]="carousel"
+              [numVisible]="3"
+              [numScroll]="1"
+              [circular]="true"
+              [autoplayInterval]="3000"
+              [responsiveOptions]="responsiveOptions">
+    <ng-template let-product pTemplate="item">
+      <div class="flex flex-column mx-auto h-full">
+        <div class="p-2 h-full">
+          <img src="{{product.imageUrl}}" [alt]="product.name" style="width:100%; height: 100%; object-fit:fill"
+               class="w-full border-round"/>
+        </div>
 
-          </div>
-          <div class="absolute  p-2 w-full font-bold  text-black-alpha-60"
-               style="height: auto; width: 100%; background: linear-gradient(to bottom, white, transparent);"
-               [ngStyle]="{ 'left.px': 0, 'top.px': 0 }">
-            <div class="p-2">
-              {{ product.name }}
+        <div class="flex justify-content-center font-bold text-black-alpha-60">
+          {{ product.name }}
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+
+  <p-carousel *ngIf="!carousel.length" #shimmer
+              [value]="[1,2,3]"
+              [numVisible]="3"
+              [numScroll]="3"
+              [circular]="false"
+              [autoplayInterval]="3000"
+              [responsiveOptions]="responsiveOptions">
+    <ng-template let-product pTemplate="item">
+      <div class=" border-none m-2 p-3">
+        <div class="mb-3">
+          <div class="relative mx-auto w-full">
+            <!--            <img src="{{product.imageUrl}}" [alt]="product.name" height="300" width="500" class="w-full border-round"/>-->
+            <div style="width:500px;height:300px">
+              <p-skeleton styleClass="w-full h-full"></p-skeleton>
+
+            </div>
+            <div class="absolute  p-2 w-full font-bold  text-black-alpha-60"
+                 style="height: auto; width: 100%; background: linear-gradient(to bottom, white, transparent);"
+                 [ngStyle]="{ 'left.px': 0, 'top.px': 0 }">
+              <div class="p-2">
+                {{ product.name }}
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </ng-template>
-</p-carousel>
-
-<div class="col-12 sm:col-12 md:col-10 lg:col-10 mx-auto mt-5">
+    </ng-template>
+  </p-carousel>
   <div class="flex flex-column gap-5">
     <div class="border-0 border-100 border-round shadow-none" >
 
@@ -58,12 +59,14 @@
             In the year 2015, Munni Enterprise extended its business operation from supply business to a full time
             company with ensuring quality product and technical support to the animal health & fisheries sector of
             Bangladesh With this view, M. M Animal Health, a sister concern of Munni Enterprise was established in
-            2015
-            to ensure world class nutritional products and feed additives, comprises an extensive catalogue of
+            2015 to ensure world class nutritional products and feed additives, comprises an extensive catalogue of
             pharmacological products, pesticide, feed premix, nutritional formulations & other feed additives of
             livestock, poultry & aquaculture. A Strong & dedicated sales and marketing team, experienced veterinarians
             &
-            technical personnel are working with the company. Constant contact between our technical and sales team
+            technical personnel are working with the company.
+            <br>
+            <br>
+            Constant contact between our technical and sales team
             and
             the livestock industry ensures quality assurance of livestock productivity. we are continuously updated
             with
@@ -83,7 +86,7 @@
                 <div class="flex justify-content-center">
                   <div
                     class="inline-block w-10rem h-10rem mt-2 overflow-hidden border-round border-circle flex justify-content-center">
-                    <p-image src="images/product-images/img_2.png"/>
+                    <p-image src="images/ceo.png"/>
                   </div>
                 </div>
 

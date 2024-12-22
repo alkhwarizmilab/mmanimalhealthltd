@@ -2,9 +2,10 @@ import {Component, Input} from '@angular/core';
 import {MenubarModule} from "primeng/menubar";
 import {ToolbarModule} from "primeng/toolbar";
 import {Router} from "@angular/router";
-import {NgOptimizedImage} from "@angular/common";
+import {NgClass, NgOptimizedImage} from "@angular/common";
 import {MenuModule} from "primeng/menu";
 import {Button} from "primeng/button";
+import {Ripple} from "primeng/ripple";
 
 @Component({
   selector: 'app-top-bar',
@@ -14,7 +15,9 @@ import {Button} from "primeng/button";
     ToolbarModule,
     NgOptimizedImage,
     MenuModule,
-    Button
+    Button,
+    NgClass,
+    Ripple
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
@@ -23,6 +26,13 @@ export class HeaderComponent {
 constructor(private router:Router) {
 }
   items = [
+    {
+      label: 'Home',
+      icon: 'pi pi-home',
+      command: () => {
+        this.router.navigate(['/']);
+      }
+    },
     {
       label: 'About Us',
       icon: 'pi pi-info-circle',
@@ -66,13 +76,13 @@ constructor(private router:Router) {
   responsiveOptions = [
     {
       breakpoint: '1199px',
-      numVisible: 1,
-      numScroll: 1
+      numVisible: 3,
+      numScroll: 3
     },
     {
       breakpoint: '991px',
-      numVisible: 2,
-      numScroll: 1
+      numVisible: 3,
+      numScroll: 3
     },
     {
       breakpoint: '767px',

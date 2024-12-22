@@ -8,9 +8,7 @@
       </div>
       <div>
         <h3 class="text-black-alpha-70">M.M Animal Health Ltd.</h3>
-        <p class="text-black-alpha-60 text-sm"> M.M Animal Health Ltd. is a sister concern of an award winning company
-          "Techno Venture ltd",that aims to provide quality products to the farmers and Committed to be always with the
-          farmers.
+        <p class="line-height-3 text-black-alpha-60 text-sm"> MM Animal Health: Trusted importer and distributor of pharmacological products, pesticides, feed premixes, nutritional formulations, and feed additives for livestock, poultry, and aquaculture.
         </p>
       </div>
     </div>
@@ -19,6 +17,7 @@
       <h3 style="display:block">
         Userful Links
       </h3>
+      <span [ngClass]="linkClass" routerLink="/">Home</span>
       <span [ngClass]="linkClass" routerLink="about-us">About Us</span>
       <span [ngClass]="linkClass" routerLink="products">Products</span>
       <span [ngClass]="linkClass" routerLink="global-partners">Global Partners</span>
@@ -33,7 +32,8 @@
       </h3>
 <!--      <span (click)="openUrl('https://maps.app.goo.gl/CdPrvJjPfmUgUYhA6')" [ngClass]="linkClass"><i-->
 <!--        class="pi pi-map-marker"> </i> 54, Gulshan, Dhaka-1200</span>-->
-      <span (click)="openUrl('tel:+880 191- 662 1512')" [ngClass]="linkClass"><i class="pi pi-phone"> </i> +880 191- 662 1512</span>
+      <span (click)="openUrl('tel:+880 191- 662 1512')" [ngClass]="linkClass"><i class="pi pi-mobile"> </i> +880 191-662 1512</span>
+      <span (click)="openUrl('tel:+88027725104')" [ngClass]="linkClass"><i class="pi pi-phone"> </i> +88 02-7725104</span>
       <span (click)="openUrl('mailto:mmanimalhealthbd40@gmail.com')" [ngClass]="linkClass"><i
         class="pi pi-envelope"> </i> {{ 'mmanimalhealthbd40@gmail.com' }}</span>
     </div>
