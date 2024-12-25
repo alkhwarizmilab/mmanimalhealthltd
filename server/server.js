@@ -66,6 +66,14 @@ export function app() {
 
     res.json(products);
   });
+  app.get('/api/products/:id', async (req, res) => {
+    await db.read();
+    db.data ||= { products: [] };
+    const productId = req.params.id;
+    let dbProduct = db.data.products.find(p => p.id === productId);
+
+    res.json(dbProduct);
+  });
 
   app.post('/api/products', upload.single('image'), async (req, res) => {
     await db.read();

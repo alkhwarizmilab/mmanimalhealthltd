@@ -29,7 +29,10 @@ export class ProductService {
 
     return this.http.get(this.baseUrl + '/api/products')
   }
+  fetchProductById(id: any): Observable<any> {
+    return this.http.get(this.baseUrl + '/api/products/' + id);
 
+  }
   addProduct(formData: FormData): Observable<any> {
     return this.http.post(this.baseUrl + '/api/products', formData)
   }
@@ -45,5 +48,6 @@ export class ProductService {
   fetchFeaturedProducts(): Observable<any> {
     return this.http.get(this.baseUrl + '/api/products?category=featured')
   }
+
 
 }

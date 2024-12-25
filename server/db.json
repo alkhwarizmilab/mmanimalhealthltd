@@ -1,14 +1,14 @@
 {
   "products": [
     {
-      "category": "sf",
-      "description": "sf",
-      "id": "6b2bdea6-e9d9-4edd-995c-5bbb329b9056",
-      "name": "sfd",
+      "category": "fasfsfa",
+      "description": "asfsa",
+      "id": "074c9f61-b856-400e-962f-a9c566efb3be",
+      "name": "afas",
       "price": 0,
-      "shortDescription": "sf",
+      "shortDescription": "sfaf",
       "stock": 0,
-      "imageUrl": "http://localhost:4000/uploads/1734795682379-751924257-db3pnif-24dc8e1f-6e3c-4448-a9d6-0b0a138bbb38.png"
+      "imageUrl": "http://localhost:4000/uploads/1735138401355-198248174-1000003368.jpg"
     }
   ]
 }
