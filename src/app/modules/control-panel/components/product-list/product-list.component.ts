@@ -2,8 +2,6 @@ import {Component, OnInit, signal} from '@angular/core';
 import {ProductService} from "../../../products/service/product.service";
 import {Product} from "../../../products/domain/product";
 import {Confirmation, ConfirmationService} from "primeng/api";
-import {FileUploadEvent} from "primeng/fileupload";
-import {ref} from "@angular/fire/storage";
 import {EditorComponent} from "@tinymce/tinymce-angular";
 
 @Component({
@@ -53,7 +51,9 @@ export class ProductListComponent {
     this.productDialogMode = 'new'
     this.showProductInfoDialog = true;
     this.productInfoHeader = 'Add Product'
-    this.currentProduct = {category: "", description: "", id: "", name: "", price: 0, shortDescription: "", stock: 0}
+    this.currentProduct = {
+      link: "",
+      category: "", description: "", id: "", name: "", price: 0, shortDescription: "", stock: 0}
   }
 
   showEditDialog(item: any) {

@@ -86,6 +86,16 @@
              autocomplete="off"/>
     </div>
     <div class="field">
+      <label for="productLink" class="">Product Link</label>
+      <p-inputGroup>
+        <p-inputGroupAddon>products/</p-inputGroupAddon>
+        <input pInputText [(ngModel)]="currentProduct.link" id="productLink"
+               class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+               autocomplete="off"/>
+      </p-inputGroup>
+
+    </div>
+    <div class="field">
       <label for="category" class="">Category</label>
       <input pInputText id="category" [(ngModel)]="currentProduct.category"
              class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"

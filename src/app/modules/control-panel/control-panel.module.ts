@@ -20,27 +20,30 @@ import {DialogModule} from "primeng/dialog";
 import {InputTextModule} from "primeng/inputtext";
 import {FileUploadModule} from "primeng/fileupload";
 import {EditorComponent, TINYMCE_SCRIPT_SRC} from "@tinymce/tinymce-angular";
-
+import { InputGroupModule } from 'primeng/inputgroup';
+import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 @NgModule({
   declarations: [ControlPanelComponent, ProductListComponent, SettingsComponents],
-    imports: [
-        RouterModule.forChild(cpRoutes),
-        CommonModule,
-        MenuModule,
-        DataViewModule,
-        FormsModule,
-        SelectButtonModule,
-        SkeletonModule,
-        Button,
-        HeaderComponent,
-        FooterComponent,
-        ToastModule,
-        ConfirmDialogModule,
-        DialogModule,
-        InputTextModule,
-        FileUploadModule,
-        EditorComponent,
-    ], providers: [
+  imports: [
+    RouterModule.forChild(cpRoutes),
+    CommonModule,
+    MenuModule,
+    DataViewModule,
+    FormsModule,
+    SelectButtonModule,
+    SkeletonModule,
+    Button,
+    HeaderComponent,
+    FooterComponent,
+    ToastModule,
+    ConfirmDialogModule,
+    DialogModule,
+    InputTextModule,
+    FileUploadModule,
+    EditorComponent,
+    InputGroupModule,
+    InputGroupAddonModule,
+  ], providers: [
     ConfirmationService,
     { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }
   ]
