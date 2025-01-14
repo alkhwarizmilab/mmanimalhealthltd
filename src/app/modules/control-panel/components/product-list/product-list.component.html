@@ -63,7 +63,7 @@
   </p-dataView>
 </div>
 
-<p-dialog *ngIf="showProductInfoDialog" header="{{productInfoHeader}}" [modal]="true"
+<p-dialog *ngIf="showProductInfoDialog" header="{{productInfoHeader}}" [modal]="true" [maximizable]="true" [resizable]="true"
           [(visible)]="showProductInfoDialog" styleClass="w-12 sm:w-12 md:w-8 lg:w-8">
   <span class="p-text-secondary block mb-5">Update your information.</span>
   <div class="flex flex-column gap-2">

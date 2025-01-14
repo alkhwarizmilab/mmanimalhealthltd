@@ -5,19 +5,21 @@ import {Button} from "primeng/button";
 import {NgForOf, NgStyle} from "@angular/common";
 import {DividerModule} from "primeng/divider";
 import {CardTitleComponent} from "./card-title/card-title.component";
+import {ImageModule} from "primeng/image";
 
 @Component({
   selector: 'app-about-us',
   standalone: true,
-  imports: [
-    CardModule,
-    TagModule,
-    Button,
-    NgForOf,
-    NgStyle,
-    DividerModule,
-    CardTitleComponent
-  ],
+    imports: [
+        CardModule,
+        TagModule,
+        Button,
+        NgForOf,
+        NgStyle,
+        DividerModule,
+        CardTitleComponent,
+        ImageModule
+    ],
   templateUrl: './about-us.component.html',
   styleUrl: './about-us.component.scss',
 })

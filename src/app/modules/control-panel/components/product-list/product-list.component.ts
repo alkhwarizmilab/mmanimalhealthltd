@@ -21,7 +21,7 @@ export class ProductListComponent {
   selectedFile: any
   previewURL: any;
   init: EditorComponent['init'] = {
-    plugins: 'lists link image table code help wordcount',
+    plugins: 'lists link image table code help wordcount fullscreen',
     base_url: '/tinymce', // Root for resources
     suffix: '.min'        // Suffix to use when loading resources
   };
