@@ -74,7 +74,10 @@ export function app() {
 
     res.json(dbProduct);
   });
-
+  function sanitizeFileName(fileName) {
+    // Replace spaces and special characters with underscores
+    return fileName.replace(/[^a-zA-Z0-9]/g, '_');
+  }
   app.post('/api/products', upload.single('image'), async (req, res) => {
     await db.read();
     db.data ||= { products: [] };
@@ -82,7 +85,7 @@ export function app() {
     let product = JSON.parse(req.body.product);
     product.imageUrl = req.file ? `${API_BASE_URL}/${req.file.path}` : product.imageUrl;
     console.log(req.file);
-    product.id = randomUUID();
+    product.id = sanitizeFileName(product.name);
     db.data.products.push(product);
     await db.write();
     res.json(product);

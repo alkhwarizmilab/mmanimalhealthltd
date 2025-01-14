@@ -4,6 +4,7 @@ import {Product} from "../../../products/domain/product";
 import {Confirmation, ConfirmationService} from "primeng/api";
 import {FileUploadEvent} from "primeng/fileupload";
 import {ref} from "@angular/fire/storage";
+import {EditorComponent} from "@tinymce/tinymce-angular";
 
 @Component({
   selector: 'app-product-list',
@@ -21,7 +22,11 @@ export class ProductListComponent {
   uploadedFiles: any;
   selectedFile: any
   previewURL: any;
-
+  init: EditorComponent['init'] = {
+    plugins: 'lists link image table code help wordcount',
+    base_url: '/tinymce', // Root for resources
+    suffix: '.min'        // Suffix to use when loading resources
+  };
   constructor(private productService: ProductService, private confirmationService: ConfirmationService) {
     this.fetchProducts();
   }

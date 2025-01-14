@@ -1,0 +1,52 @@
+<!-- login.component.html -->
+<p-card header="Login" class="p-shadow-8 p-p-4 p-mt-5">
+  <div class="p-d-flex p-jc-center p-ai-center">
+    <div class="p-col-12 p-md-6 p-lg-4">
+      <form (ngSubmit)="onLogin()" #loginForm="ngForm" class="p-fluid">
+        <!-- Username Field -->
+        <div class="flex flex-column gap-3">
+
+        <div class="p-field">
+          <label for="username" class="p-d-block">Username</label>
+          <input
+            id="username"
+            type="text"
+            pInputText
+            [(ngModel)]="username"
+            name="username"
+            required
+            class="p-inputtext p-component"
+            placeholder="Enter your username"
+          />
+        </div>
+
+        <!-- Password Field -->
+        <div class="p-field">
+          <label for="password" class="p-d-block">Password</label>
+          <input
+            id="password"
+            type="password"
+            pInputText
+            [(ngModel)]="password"
+            name="password"
+            required
+            class="p-inputtext p-component"
+            placeholder="Enter your password"
+          />
+        </div>
+
+
+        <!-- Login Button -->
+        <p-button
+          label="Login"
+          icon="pi pi-sign-in"
+          type="submit"
+          [disabled]="!loginForm.valid"
+          class="p-mt-3 p-button-raised p-button-primary w-100"
+        ></p-button>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</p-card>

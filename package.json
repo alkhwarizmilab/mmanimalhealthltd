@@ -26,6 +26,7 @@
     "@angular/platform-server": "^18.0.0",
     "@angular/router": "^18.0.0",
     "@angular/ssr": "^18.2.12",
+    "@tinymce/tinymce-angular": "^8.0.1",
     "dotenv": "^16.4.7",
     "express": "^4.18.2",
     "lowdb": "^7.0.1",
@@ -34,6 +35,7 @@
     "primeicons": "^7.0.0",
     "primeng": "^17.18.12",
     "rxjs": "~7.8.0",
+    "tinymce": "^7.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },

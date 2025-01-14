@@ -7,7 +7,7 @@
       <div class="border-round overflow-hidden flex-shrink-0">
         <img
           [src]="product?.imageUrl"
-          alt="Product Image" style="object-fit:cover"/>
+          alt="Product Image" style="max-width: 400px;object-fit:cover"/>
       </div>
 
       <!-- Product Info -->
@@ -31,8 +31,8 @@
     <!-- Product Details Section -->
     <div>
       <div class="text-xl font-semibold text-black-alpha-90 mb-2">Details</div>
-      <div class="text-black-alpha-70 line-height-3">
-        {{ product?.description }}
+      <div class="text-black-alpha-70 line-height-3" [innerHTML]="product?.description">
+
       </div>
     </div>
 

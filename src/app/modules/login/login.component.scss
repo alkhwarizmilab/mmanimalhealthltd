@@ -1,0 +1,16 @@
+/* login.component.css */
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.p-card {
+  width: 100%;
+  max-width: 400px;
+}
+
+.p-button {
+  width: 100%;
+}

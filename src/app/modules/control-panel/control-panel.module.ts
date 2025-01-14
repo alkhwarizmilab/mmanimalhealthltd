@@ -19,27 +19,30 @@ import {ConfirmDialogModule} from "primeng/confirmdialog";
 import {DialogModule} from "primeng/dialog";
 import {InputTextModule} from "primeng/inputtext";
 import {FileUploadModule} from "primeng/fileupload";
+import {EditorComponent, TINYMCE_SCRIPT_SRC} from "@tinymce/tinymce-angular";
 
 @NgModule({
   declarations: [ControlPanelComponent, ProductListComponent, SettingsComponents],
-  imports: [
-    RouterModule.forChild(cpRoutes),
-    CommonModule,
-    MenuModule,
-    DataViewModule,
-    FormsModule,
-    SelectButtonModule,
-    SkeletonModule,
-    Button,
-    HeaderComponent,
-    FooterComponent,
-    ToastModule,
-    ConfirmDialogModule,
-    DialogModule,
-    InputTextModule,
-    FileUploadModule,
-  ], providers: [
-    ConfirmationService
+    imports: [
+        RouterModule.forChild(cpRoutes),
+        CommonModule,
+        MenuModule,
+        DataViewModule,
+        FormsModule,
+        SelectButtonModule,
+        SkeletonModule,
+        Button,
+        HeaderComponent,
+        FooterComponent,
+        ToastModule,
+        ConfirmDialogModule,
+        DialogModule,
+        InputTextModule,
+        FileUploadModule,
+        EditorComponent,
+    ], providers: [
+    ConfirmationService,
+    { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }
   ]
 })
 export class ControlPanelModule {
