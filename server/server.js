@@ -9,8 +9,12 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const API_BASE_URL = process.env.API_BASE_URL || '';
+console.log("===============env================");
+console.log(process.env);
+console.log("===============env================");
 
 function deleteFile(fileUrl) {
+  if (!fileUrl) return;
   const baseUrl = `${API_BASE_URL}/`;
   const filePath = fileUrl.replace(new RegExp(`^${baseUrl}`), '');
 
@@ -70,7 +74,7 @@ export function app() {
     await db.read();
     db.data ||= { products: [] };
     const productId = req.params.id;
-    let dbProduct = db.data.products.find(p => p.id === productId);
+    let dbProduct = db.data.products.find(p => (p.id === productId) || (p.link === productId));
 
     res.json(dbProduct);
   });
@@ -85,7 +89,7 @@ export function app() {
     let product = JSON.parse(req.body.product);
     product.imageUrl = req.file ? `${API_BASE_URL}/${req.file.path}` : product.imageUrl;
     console.log(req.file);
-    product.id = sanitizeFileName(product.name);
+    product.id = randomUUID();
     db.data.products.push(product);
     await db.write();
     res.json(product);

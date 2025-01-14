@@ -53,7 +53,7 @@ export class ProductsListComponent implements OnInit {
       this.products = data
       let productMap = new Map();
       this.products.map(products => {
-        productMap.set(products.id, products);
+        productMap.set(products.link, products);
       })
       this.productService.productMap = productMap;
     });
