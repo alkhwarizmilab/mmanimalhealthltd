@@ -64,30 +64,23 @@ export class HomeComponent implements OnInit {
   carousel: any[] = [
     {
       id: 1,
-      name: 'Welcome to M.M Animal Health',
-      description: 'A comprehensive solution for animal health care.',
-      price: 49.99,
-      imageUrl: 'images/carausel/welcome.png',
-      category: 'Animal Health',
-      stock: 100,
+      name: '',
+      imageUrl: 'images/carausel/slide1.jpg',
     },
     {
       id: 2,
-      name: 'Featured Product',
-      description: 'Our top-quality featured product.',
-      price: 89.99,
-      imageUrl: 'images/carausel/feature-product.png',
-      category: 'Featured',
-      stock: 200,
+      name: '',
+      imageUrl: 'images/carausel/slide2.jpg',
     },
     {
       id: 3,
-      name: 'Global Partners',
-      description: 'Trusted solutions from our global partners.',
-      price: 69.99,
-      imageUrl: 'images/carausel/global-partners.png',
-      category: 'Global Solutions',
-      stock: 150,
+      name: '',
+      imageUrl: 'images/carausel/slide3.jpg',
+    },
+    {
+      id: 4,
+      name: '',
+      imageUrl: 'images/carausel/slide4.jpg',
     },
   ];
   featuredProducts: any[] = [

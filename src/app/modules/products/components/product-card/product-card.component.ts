@@ -2,7 +2,7 @@ import {Component, Input} from '@angular/core';
 import {RouterLink} from "@angular/router";
 import {Button, ButtonDirective} from "primeng/button";
 import {SkeletonModule} from "primeng/skeleton";
-import {NgIf} from "@angular/common";
+import {NgIf, NgStyle} from "@angular/common";
 import {AnimateOnScrollModule} from "primeng/animateonscroll";
 
 @Component({
@@ -14,7 +14,8 @@ import {AnimateOnScrollModule} from "primeng/animateonscroll";
     Button,
     SkeletonModule,
     NgIf,
-    AnimateOnScrollModule
+    AnimateOnScrollModule,
+    NgStyle
   ],
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.scss'

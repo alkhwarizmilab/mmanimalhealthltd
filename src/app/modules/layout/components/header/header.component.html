@@ -1,29 +1,27 @@
 <p-toolbar styleClass="flex justify-content-center">
-<div class="flex flex-column align-items-center">
-  <div class="flex flex-row justify-content-center">
-    <div class="flex flex-grow-0 block sm:block md:hidden lg:hidden align-items-center align-content-center">
-      <p-button icon="pi pi-bars" [text]="true" (click)="menu.toggle($event)" styleClass=""></p-button>
-      <p-menu #menu [popup]="true" [model]="items"></p-menu>
-    </div>
-    <div class="flex flex-grow-1 md:flex-grow-0 lg:flex-grow-0 w-12 sm:w-12 md:w-5 lg:w-5">
-      <div routerLink="/" class="flex justify-content-center align-items-center max-w-fit cursor-pointer">
-        <img src="images/mmanimalhealth-header-image.png" style="width:100%;height:auto;object-fit:contain"
-             alt="mmanimalhealthltd">
+  <div class="flex flex-column align-items-center">
+    <div class="flex flex-row justify-content-center w-full">
+      <div class="flex flex-grow-0 block sm:block md:hidden lg:hidden align-items-center">
+        <p-button icon="pi pi-bars" [text]="true" (click)="menu.toggle($event)"></p-button>
+        <p-menu #menu [popup]="true" [model]="items"></p-menu>
+      </div>
 
+      <div class="flex flex-grow-1 md:flex-grow-0 lg:flex-grow-0 w-12 md:w-auto h-3rem justify-content-between">
+        <div class="flex flex-row align-items-center">
+          <div routerLink="/" class="flex justify-content-center align-items-center cursor-pointer">
+            <img src="images/mmanimalhealth-header-image.png"
+                 alt="mmanimalhealthltd"
+                 class="h-3rem w-auto max-w-full"
+                 style="object-fit: contain;">
+          </div>
+
+          <div class="flex justify-content-center ml-3">
+            <div class="mt-2 hidden sm:hidden md:flex lg:flex">
+              <p-menubar styleClass="border-none" [model]="items"></p-menubar>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
   </div>
-  <div class="flex justify-content-center">
-    <div class="mt-2 hidden sm:hidden md:flex lg:flex">
-      <p-menubar styleClass="border-none" [model]="items">
-      </p-menubar>
-    </div>
-
-
-  </div>
-</div>
-
-
-
 </p-toolbar>
