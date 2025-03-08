@@ -45,12 +45,12 @@ export class HomeComponent implements OnInit {
   responsiveOptions = [
     {
       breakpoint: '1199px',
-      numVisible: 3,
+      numVisible: 1,
       numScroll: 1
     },
     {
       breakpoint: '991px',
-      numVisible: 3,
+      numVisible: 1,
       numScroll: 1
     },
     {

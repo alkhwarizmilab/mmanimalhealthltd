@@ -23,29 +23,33 @@ import {Ripple} from "primeng/ripple";
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-constructor(private router:Router) {
-}
+  constructor(private router: Router) {
+  }
+
   items = [
     {
       label: 'Home',
       icon: 'pi pi-home',
       command: () => {
         this.router.navigate(['/']);
-      }
+      },
+      routerLinkActiveOptions: {exact: true},
     },
     {
       label: 'About Us',
       icon: 'pi pi-info-circle',
       command: () => {
         this.router.navigate(['/about-us']);
-      }
+      },
+      routerLinkActiveOptions: {exact: true},
     },
     {
       label: 'Products',
       icon: 'pi pi-shopping-bag',
       command: () => {
         this.router.navigate(['/products']);
-      }
+      },
+      routerLinkActiveOptions: {exact: true},
     },
     {
       separator: true
@@ -55,14 +59,16 @@ constructor(private router:Router) {
       icon: 'pi pi-star',
       command: () => {
         this.router.navigate(['/global-partners']);
-      }
+      },
+      routerLinkActiveOptions: {exact: true},
     },
     {
       label: 'Gallery',
       icon: 'pi pi-images',
       command: () => {
         this.router.navigate(['/gallery']);
-      }
+      },
+      routerLinkActiveOptions: {exact: true},
     },
 
     {
@@ -70,7 +76,8 @@ constructor(private router:Router) {
       icon: 'pi pi-envelope',
       command: () => {
         this.router.navigate(['/contact-us']);
-      }
+      },
+      routerLinkActiveOptions: {exact: true},
     }
   ]
   responsiveOptions = [
